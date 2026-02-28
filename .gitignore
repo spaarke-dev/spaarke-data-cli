@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Generated data (large, environment-specific)
+output/
+
+# Downloaded datasets (large binary files)
+sources/cuad/
+sources/caselaw/
+sources/kaggle-clauses/
+sources/termscout/
+sources/regulations/
+sources/templates/
+
+# Environment-specific config
+config/environments.local.yaml
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test coverage
+coverage/
+
+# npm
+*.tgz

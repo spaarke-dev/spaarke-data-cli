@@ -1,0 +1,21 @@
+# Named environment configurations for spaarke-data CLI
+# Usage: spaarke-data load --target dev
+
+environments:
+  dev:
+    dataverse_url: https://spaarkedev1.crm.dynamics.com
+    bff_api_url: https://spe-api-dev-67e2xz.azurewebsites.net
+    search_url: https://spaarke-search-dev.search.windows.net
+    description: Development environment
+
+  # staging:
+  #   dataverse_url: https://spaarke-staging.crm.dynamics.com
+  #   bff_api_url: https://spe-api-staging.azurewebsites.net
+  #   search_url: https://spaarke-search-staging.search.windows.net
+  #   description: Staging / QA environment
+
+  # prod:
+  #   dataverse_url: https://spaarke.crm.dynamics.com
+  #   bff_api_url: https://spe-api.azurewebsites.net
+  #   search_url: https://spaarke-search.search.windows.net
+  #   description: Production environment

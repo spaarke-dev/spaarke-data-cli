@@ -1,0 +1,35 @@
+# Default generation settings for spaarke-data CLI
+
+generation:
+  # Volume presets
+  volumes:
+    light:
+      documents_per_matter: 5
+      events_per_matter: 10
+      communications_per_matter: 8
+      total_documents_target: 100
+    full:
+      documents_per_matter: 20
+      events_per_matter: 40
+      communications_per_matter: 30
+      total_documents_target: 500
+
+  # Default AI model for content generation
+  ai_model: claude-sonnet-4-6
+
+  # Output format
+  output_dir: ./output/
+  output_format: json  # json or cmt (Configuration Migration Tool format)
+
+loading:
+  # Default loading method
+  method: webapi  # webapi or cmt
+  batch_size: 50
+  retry_count: 3
+  retry_delay_ms: 1000
+
+validation:
+  # Relationship integrity check
+  check_lookups: true
+  # Record count thresholds (warn if below)
+  min_records_per_scenario: 50

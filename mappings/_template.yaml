@@ -1,0 +1,44 @@
+# Customer Onboarding Mapping Template
+# Copy this file and customize for each customer's data format.
+#
+# Usage: spaarke-data onboard --source ./customer-data.csv --mapping ./my-mapping.yaml --target dev
+
+mapping:
+  name: "customer-name"
+  description: "Mapping for Customer X matter data import"
+  source_format: csv  # csv or xlsx
+
+  # Column-to-entity field mappings
+  entities:
+    sprk_matter:
+      columns:
+        # source_column: target_field
+        "Matter Name": sprk_name
+        "Matter Number": sprk_matternumber
+        "Practice Area": sprk_practicearea
+        "Status": sprk_matterstatus
+        "Open Date": sprk_opendate
+        "Close Date": sprk_closedate
+        "Responsible Attorney": sprk_responsibleattorney_ref  # lookup
+
+    # sprk_document:
+    #   columns:
+    #     "Document Title": sprk_name
+    #     "Document Type": sprk_documenttype
+
+  # Value transformations
+  transforms:
+    sprk_practicearea:
+      type: option_set_map
+      values:
+        "Litigation": 100000000
+        "Corporate": 100000001
+        "IP": 100000002
+        "Employment": 100000003
+
+    sprk_matterstatus:
+      type: option_set_map
+      values:
+        "Open": 100000000
+        "Closed": 100000001
+        "Pending": 100000002
