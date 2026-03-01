@@ -1,0 +1,125 @@
+{
+  "entity": "sprk_invoices",
+  "records": [
+    {
+      "sprk_scenarioid": "mvp-inv-001",
+      "sprk_name": "Baker & Associates — August 2025",
+      "sprk_invoicenumber": "BAK-2025-0801",
+      "sprk_invoiceamount": 28450.00,
+      "sprk_invoicedate": "2025-08-31",
+      "sprk_duedate": "2025-09-30",
+      "sprk_invoicestatus": 100000001,
+      "sprk_description": "Initial case assessment and complaint drafting. Includes partner review of patent portfolio, prior art analysis, and preparation and filing of complaint in US District Court, Northern District of California.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_VendorAccount@odata.bind": "/accounts(sprk_scenarioid='mvp-acct-baker-llp')"
+    },
+    {
+      "sprk_scenarioid": "mvp-inv-002",
+      "sprk_name": "Baker & Associates — September 2025",
+      "sprk_invoicenumber": "BAK-2025-0901",
+      "sprk_invoiceamount": 38720.00,
+      "sprk_invoicedate": "2025-09-30",
+      "sprk_duedate": "2025-10-30",
+      "sprk_invoicestatus": 100000001,
+      "sprk_description": "Discovery planning and initial document collection. Includes Rule 26(f) conference preparation, discovery plan drafting, custodian interviews, and litigation hold implementation at Meridian Corp.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_VendorAccount@odata.bind": "/accounts(sprk_scenarioid='mvp-acct-baker-llp')"
+    },
+    {
+      "sprk_scenarioid": "mvp-inv-003",
+      "sprk_name": "Baker & Associates — October 2025",
+      "sprk_invoicenumber": "BAK-2025-1001",
+      "sprk_invoiceamount": 42180.00,
+      "sprk_invoicedate": "2025-10-31",
+      "sprk_duedate": "2025-11-30",
+      "sprk_invoicestatus": 100000001,
+      "sprk_description": "Document review and interrogatory preparation. Includes first-pass document review of 15,000 collected documents, preparation and service of interrogatories, and responses to defendant's initial discovery requests.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_VendorAccount@odata.bind": "/accounts(sprk_scenarioid='mvp-acct-baker-llp')"
+    },
+    {
+      "sprk_scenarioid": "mvp-inv-004",
+      "sprk_name": "Baker & Associates — November 2025",
+      "sprk_invoicenumber": "BAK-2025-1101",
+      "sprk_invoiceamount": 48340.00,
+      "sprk_invoicedate": "2025-11-30",
+      "sprk_duedate": "2025-12-30",
+      "sprk_invoicestatus": 100000001,
+      "sprk_description": "Expert witness engagement and deposition preparation. Includes retention of Dr. Patel and Dr. Nakamura, coordination of expert document review, and preparation of deposition outlines for key Pinnacle witnesses.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_VendorAccount@odata.bind": "/accounts(sprk_scenarioid='mvp-acct-baker-llp')"
+    },
+    {
+      "sprk_scenarioid": "mvp-inv-005",
+      "sprk_name": "Baker & Associates — December 2025",
+      "sprk_invoicenumber": "BAK-2025-1201",
+      "sprk_invoiceamount": 31890.00,
+      "sprk_invoicedate": "2025-12-31",
+      "sprk_duedate": "2026-01-30",
+      "sprk_invoicestatus": 100000001,
+      "sprk_description": "Continuing document review and holiday-reduced activity. Includes second-pass privilege review, preparation of privilege log, and initial analysis of defendant's document production.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_VendorAccount@odata.bind": "/accounts(sprk_scenarioid='mvp-acct-baker-llp')"
+    },
+    {
+      "sprk_scenarioid": "mvp-inv-006",
+      "sprk_name": "Baker & Associates — January 2026",
+      "sprk_invoicenumber": "BAK-2026-0101",
+      "sprk_invoiceamount": 45670.00,
+      "sprk_invoicedate": "2026-01-31",
+      "sprk_duedate": "2026-03-02",
+      "sprk_invoicestatus": 100000002,
+      "sprk_description": "Expert report preparation and motion drafting. Includes coordination with Dr. Patel on manufacturing process analysis report, initial drafting of summary judgment motion, and preparation for status conference.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_VendorAccount@odata.bind": "/accounts(sprk_scenarioid='mvp-acct-baker-llp')"
+    },
+    {
+      "sprk_scenarioid": "mvp-inv-007",
+      "sprk_name": "Baker & Associates — February 2026",
+      "sprk_invoicenumber": "BAK-2026-0201",
+      "sprk_invoiceamount": 32250.00,
+      "sprk_invoicedate": "2026-02-28",
+      "sprk_duedate": "2026-03-30",
+      "sprk_invoicestatus": 100000002,
+      "sprk_description": "Settlement discussions and status conference attendance. Includes preparation of settlement demand letter, attendance at court-ordered status conference, and preliminary trial scheduling discussions.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_VendorAccount@odata.bind": "/accounts(sprk_scenarioid='mvp-acct-baker-llp')"
+    },
+    {
+      "sprk_scenarioid": "mvp-inv-008",
+      "sprk_name": "Dr. Robert Patel — Initial Expert Analysis",
+      "sprk_invoicenumber": "PATEL-2025-001",
+      "sprk_invoiceamount": 15500.00,
+      "sprk_invoicedate": "2025-11-30",
+      "sprk_duedate": "2025-12-30",
+      "sprk_invoicestatus": 100000001,
+      "sprk_description": "Initial manufacturing process analysis and preliminary report. Includes review of Meridian's patented thermal compression molding process, comparison with Pinnacle's TechFlex manufacturing methods, and preliminary opinion on infringement.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_VendorContact@odata.bind": "/contacts(sprk_scenarioid='mvp-contact-patel-robert')"
+    },
+    {
+      "sprk_scenarioid": "mvp-inv-009",
+      "sprk_name": "Dr. Patel & Dr. Nakamura — Supplemental Analysis",
+      "sprk_invoicenumber": "EXP-2026-001",
+      "sprk_invoiceamount": 21750.00,
+      "sprk_invoicedate": "2026-01-31",
+      "sprk_duedate": "2026-03-02",
+      "sprk_invoicestatus": 100000002,
+      "sprk_description": "Dr. Patel supplemental manufacturing analysis addressing defendant's technical arguments. Dr. Nakamura initial patent claim construction review and prior art analysis for patent validity opinion.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_VendorContact@odata.bind": "/contacts(sprk_scenarioid='mvp-contact-patel-robert')"
+    },
+    {
+      "sprk_scenarioid": "mvp-inv-010",
+      "sprk_name": "Dr. Emily Nakamura — Patent Validity Opinion",
+      "sprk_invoicenumber": "NAKAMURA-2026-001",
+      "sprk_invoiceamount": 12800.00,
+      "sprk_invoicedate": "2026-02-28",
+      "sprk_duedate": "2026-03-30",
+      "sprk_invoicestatus": 100000002,
+      "sprk_description": "Final patent validity opinion report. Includes comprehensive claim-by-claim analysis of Meridian's patent portfolio, assessment of prior art references cited by defendant, and opinion on patent enforceability.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_VendorContact@odata.bind": "/contacts(sprk_scenarioid='mvp-contact-nakamura-emily')"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "entity": "sprk_projects",
+  "records": [
+    {
+      "sprk_scenarioid": "mvp-proj-discovery",
+      "sprk_name": "Document Discovery",
+      "sprk_projectstatus": 100000000,
+      "sprk_startdate": "2025-09-01",
+      "sprk_enddate": "2026-02-28",
+      "sprk_description": "Comprehensive document collection, review, and production for all responsive materials. Includes privilege review, vendor management for e-discovery platform, and coordination with opposing counsel on production schedules.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')"
+    },
+    {
+      "sprk_scenarioid": "mvp-proj-expert",
+      "sprk_name": "Expert Analysis",
+      "sprk_projectstatus": 100000000,
+      "sprk_startdate": "2025-11-01",
+      "sprk_enddate": "2026-04-30",
+      "sprk_description": "Expert witness engagement for manufacturing process analysis and patent validity opinions. Includes retention of Dr. Robert Patel for thermal compression molding analysis and Dr. Emily Nakamura for patent claim construction and validity assessment.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')"
+    },
+    {
+      "sprk_scenarioid": "mvp-proj-trial-prep",
+      "sprk_name": "Trial Preparation",
+      "sprk_projectstatus": 100000002,
+      "sprk_startdate": "2026-03-01",
+      "sprk_enddate": "2026-06-30",
+      "sprk_description": "Pre-trial motions, exhibit preparation, witness preparation, and trial strategy development. Covers summary judgment briefing, motions in limine, demonstrative exhibit creation, and mock trial exercises.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')"
+    }
+  ]
+}

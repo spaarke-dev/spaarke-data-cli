@@ -1,0 +1,203 @@
+{
+  "scenario": "meridian-v-pinnacle",
+  "generated": "2026-03-01",
+  "total_files": 28,
+  "files": [
+    {
+      "doc_id": "mvp-doc-001",
+      "path": "contracts/mvp-doc-001_meridian-pinnacle-msa.md",
+      "type": "contract",
+      "format": "markdown",
+      "description": "Master Services Agreement between Meridian Corp and Pinnacle Industries"
+    },
+    {
+      "doc_id": "mvp-doc-002",
+      "path": "contracts/mvp-doc-002_technology-license-agreement.md",
+      "type": "contract",
+      "format": "markdown",
+      "description": "Technology License Agreement for US Patent 9,876,543"
+    },
+    {
+      "doc_id": "mvp-doc-009",
+      "path": "contracts/mvp-doc-009_mutual-nda-meridian-pinnacle.md",
+      "type": "contract",
+      "format": "markdown",
+      "description": "Mutual Non-Disclosure Agreement between Meridian and Pinnacle"
+    },
+    {
+      "doc_id": "mvp-doc-012",
+      "path": "pleadings/mvp-doc-012_complaint.md",
+      "type": "pleading",
+      "format": "markdown",
+      "description": "Patent infringement complaint"
+    },
+    {
+      "doc_id": "mvp-doc-015",
+      "path": "pleadings/mvp-doc-015_motion-summary-judgment.md",
+      "type": "pleading",
+      "format": "markdown",
+      "description": "Motion for partial summary judgment on literal infringement of Claims 1, 3, and 7"
+    },
+    {
+      "doc_id": "mvp-doc-016",
+      "path": "pleadings/mvp-doc-016_claim-construction-brief.md",
+      "type": "pleading",
+      "format": "markdown",
+      "description": "Claim construction brief for disputed terms"
+    },
+    {
+      "doc_id": "mvp-doc-030",
+      "path": "expert-reports/mvp-doc-030_patel-manufacturing-analysis.md",
+      "type": "expert-report",
+      "format": "markdown",
+      "description": "Dr. Robert Patel expert report on manufacturing process infringement"
+    },
+    {
+      "doc_id": "mvp-doc-032",
+      "path": "expert-reports/mvp-doc-032_nakamura-patent-validity.md",
+      "type": "expert-report",
+      "format": "markdown",
+      "description": "Dr. Emily Nakamura expert report on patent validity"
+    },
+    {
+      "doc_id": "mvp-doc-034",
+      "path": "memos/mvp-doc-034_case-strategy-memo.md",
+      "type": "memo",
+      "format": "markdown",
+      "description": "Confidential case strategy memo"
+    },
+    {
+      "doc_id": "mvp-doc-035",
+      "path": "memos/mvp-doc-035_settlement-analysis.md",
+      "type": "memo",
+      "format": "markdown",
+      "description": "Settlement range analysis"
+    },
+    {
+      "doc_id": "mvp-doc-036",
+      "path": "memos/mvp-doc-036_risk-assessment.md",
+      "type": "memo",
+      "format": "markdown",
+      "description": "Litigation risk assessment"
+    },
+    {
+      "doc_id": "mvp-doc-039",
+      "path": "memos/mvp-doc-039_discovery-status-report.md",
+      "type": "memo",
+      "format": "markdown",
+      "description": "Discovery status report as of January 2026"
+    },
+    {
+      "doc_id": "mvp-doc-040",
+      "path": "emails/mvp-doc-040_engagement-confirmation.eml",
+      "type": "email",
+      "format": "eml",
+      "description": "Engagement confirmation from Rachel Torres to Sarah Chen"
+    },
+    {
+      "doc_id": "mvp-doc-041",
+      "path": "emails/mvp-doc-041_case-update-sep.eml",
+      "type": "email",
+      "format": "eml",
+      "description": "September 2025 case update"
+    },
+    {
+      "doc_id": "mvp-doc-043",
+      "path": "emails/mvp-doc-043_discovery-request.eml",
+      "type": "email",
+      "format": "eml",
+      "description": "Document collection request for discovery"
+    },
+    {
+      "doc_id": "mvp-doc-046",
+      "path": "emails/mvp-doc-046_discovery-dispute.eml",
+      "type": "email",
+      "format": "eml",
+      "description": "ESI production dispute correspondence"
+    },
+    {
+      "doc_id": "mvp-doc-048",
+      "path": "emails/mvp-doc-048_settlement-inquiry.eml",
+      "type": "email",
+      "format": "eml",
+      "description": "Preliminary settlement discussion from Pinnacle"
+    },
+    {
+      "doc_id": "mvp-doc-050",
+      "path": "emails/mvp-doc-050_expert-engagement.eml",
+      "type": "email",
+      "format": "eml",
+      "description": "Expert engagement letter to Dr. Patel"
+    },
+    {
+      "doc_id": "mvp-doc-053",
+      "path": "emails/mvp-doc-053_scheduling-order.eml",
+      "type": "email",
+      "format": "eml",
+      "description": "Court ECF notification - scheduling order"
+    },
+    {
+      "doc_id": "mvp-doc-054",
+      "path": "emails/mvp-doc-054_hearing-notice.eml",
+      "type": "email",
+      "format": "eml",
+      "description": "Court ECF notification - Markman hearing notice"
+    },
+    {
+      "doc_id": "mvp-doc-055",
+      "path": "invoices/mvp-doc-055_baker-invoice-aug2025.md",
+      "type": "invoice",
+      "format": "markdown",
+      "description": "Baker & Associates invoice for August 2025 ($28,450)"
+    },
+    {
+      "doc_id": "mvp-doc-056",
+      "path": "invoices/mvp-doc-056_baker-invoice-nov2025.md",
+      "type": "invoice",
+      "format": "markdown",
+      "description": "Baker & Associates invoice for November 2025 ($48,340)"
+    },
+    {
+      "doc_id": "mvp-doc-057",
+      "path": "invoices/mvp-doc-057_patel-invoice-nov2025.md",
+      "type": "invoice",
+      "format": "markdown",
+      "description": "Dr. Patel expert invoice for November 2025 ($15,500)"
+    },
+    {
+      "doc_id": "mvp-doc-059",
+      "path": "court-orders/mvp-doc-059_scheduling-order.md",
+      "type": "court-order",
+      "format": "markdown",
+      "description": "Case Management and Scheduling Order"
+    },
+    {
+      "doc_id": "mvp-doc-060",
+      "path": "court-orders/mvp-doc-060_discovery-order.md",
+      "type": "court-order",
+      "format": "markdown",
+      "description": "Order on Motion to Compel ESI production"
+    },
+    {
+      "doc_id": "mvp-doc-061",
+      "path": "court-orders/mvp-doc-061_protective-order.md",
+      "type": "court-order",
+      "format": "markdown",
+      "description": "Stipulated Protective Order"
+    },
+    {
+      "doc_id": "mvp-doc-062",
+      "path": "memos/mvp-doc-062_legal-research-memo.md",
+      "type": "memo",
+      "format": "markdown",
+      "description": "Legal research memo on claim construction precedents"
+    },
+    {
+      "doc_id": "mvp-doc-065",
+      "path": "memos/mvp-doc-065_witness-list.md",
+      "type": "memo",
+      "format": "markdown",
+      "description": "Witness list for trial with expected testimony summaries"
+    }
+  ]
+}

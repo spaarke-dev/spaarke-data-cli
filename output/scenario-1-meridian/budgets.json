@@ -1,0 +1,56 @@
+{
+  "entity": "sprk_budgets",
+  "records": [
+    {
+      "sprk_scenarioid": "mvp-budget-001",
+      "sprk_name": "Meridian v. Pinnacle Litigation Budget",
+      "sprk_budgetamount": 500000.00,
+      "sprk_currency": "USD",
+      "sprk_periodstart": "2025-08-15",
+      "sprk_periodend": "2026-06-30",
+      "sprk_budgetstatus": 100000000,
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')"
+    }
+  ],
+  "related": {
+    "entity": "sprk_budgetbuckets",
+    "parentLookup": "sprk_Budget@odata.bind",
+    "records": [
+      {
+        "sprk_scenarioid": "mvp-bucket-discovery",
+        "sprk_name": "Discovery",
+        "sprk_budgetedamount": 150000.00,
+        "sprk_description": "Document collection, e-discovery platform, review, and production costs including vendor fees and contract attorney time.",
+        "sprk_Budget@odata.bind": "/sprk_budgets(sprk_scenarioid='mvp-budget-001')"
+      },
+      {
+        "sprk_scenarioid": "mvp-bucket-expert",
+        "sprk_name": "Expert Fees",
+        "sprk_budgetedamount": 100000.00,
+        "sprk_description": "Expert witness retention, analysis, report preparation, and deposition/trial testimony fees for Dr. Patel and Dr. Nakamura.",
+        "sprk_Budget@odata.bind": "/sprk_budgets(sprk_scenarioid='mvp-budget-001')"
+      },
+      {
+        "sprk_scenarioid": "mvp-bucket-trial-prep",
+        "sprk_name": "Trial Preparation",
+        "sprk_budgetedamount": 120000.00,
+        "sprk_description": "Pre-trial motion practice, exhibit preparation, witness preparation sessions, mock trial, and demonstrative exhibit creation.",
+        "sprk_Budget@odata.bind": "/sprk_budgets(sprk_scenarioid='mvp-budget-001')"
+      },
+      {
+        "sprk_scenarioid": "mvp-bucket-depositions",
+        "sprk_name": "Depositions",
+        "sprk_budgetedamount": 80000.00,
+        "sprk_description": "Deposition scheduling, court reporter fees, videography, transcript costs, and attorney preparation and attendance time.",
+        "sprk_Budget@odata.bind": "/sprk_budgets(sprk_scenarioid='mvp-budget-001')"
+      },
+      {
+        "sprk_scenarioid": "mvp-bucket-misc",
+        "sprk_name": "Miscellaneous",
+        "sprk_budgetedamount": 50000.00,
+        "sprk_description": "Court filing fees, travel expenses, courier and copying costs, mediation fees, and other incidental litigation expenses.",
+        "sprk_Budget@odata.bind": "/sprk_budgets(sprk_scenarioid='mvp-budget-001')"
+      }
+    ]
+  }
+}

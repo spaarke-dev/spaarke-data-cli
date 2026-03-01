@@ -1,0 +1,18 @@
+{
+  "entity": "sprk_matters",
+  "records": [
+    {
+      "sprk_scenarioid": "mvp-matter-001",
+      "sprk_name": "Meridian Corp v. Pinnacle Industries",
+      "sprk_matternumber": "LIT-2025-0847",
+      "sprk_mattertype": 100000000,
+      "sprk_matterstatus": 100000000,
+      "sprk_practicearea": 100000003,
+      "sprk_opendate": "2025-08-15",
+      "sprk_closedate": null,
+      "sprk_description": "Patent infringement dispute regarding proprietary manufacturing process technology. Meridian Corp alleges Pinnacle Industries utilized patented thermal compression molding techniques in their TechFlex product line without authorization. Case filed in US District Court, Northern District of California.",
+      "sprk_ClientAccount@odata.bind": "/accounts(sprk_scenarioid='mvp-acct-meridian')",
+      "sprk_ResponsibleAttorney@odata.bind": "/contacts(sprk_scenarioid='mvp-contact-torres-rachel')"
+    }
+  ]
+}

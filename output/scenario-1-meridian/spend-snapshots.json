@@ -1,0 +1,89 @@
+{
+  "entity": "sprk_spendsnapshots",
+  "records": [
+    {
+      "sprk_scenarioid": "mvp-spend-001",
+      "sprk_name": "September 2025 Spend Snapshot",
+      "sprk_snapshotdate": "2025-09-30T00:00:00Z",
+      "sprk_periodstart": "2025-09-01T00:00:00Z",
+      "sprk_periodend": "2025-09-30T00:00:00Z",
+      "sprk_actualamount": 38720.00,
+      "sprk_cumulativeactual": 67170.00,
+      "sprk_forecastremaining": 400000.00,
+      "sprk_budgetvariance": 32830.00,
+      "sprk_Budget@odata.bind": "/sprk_budgets(sprk_scenarioid='mvp-budget-001')",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_notes": "First monthly snapshot. Cumulative includes August pre-engagement fees ($28,450). September spend driven by initial disclosures preparation, Rule 16 conference, document collection setup, and e-discovery vendor onboarding. Discovery phase ramping up as expected. Budget utilization at 13.4% — tracking below linear pace due to slower September while the case was in early setup. Preliminary expert consultation costs incurred ahead of formal engagement."
+    },
+    {
+      "sprk_scenarioid": "mvp-spend-002",
+      "sprk_name": "October 2025 Spend Snapshot",
+      "sprk_snapshotdate": "2025-10-31T00:00:00Z",
+      "sprk_periodstart": "2025-10-01T00:00:00Z",
+      "sprk_periodend": "2025-10-31T00:00:00Z",
+      "sprk_actualamount": 42180.00,
+      "sprk_cumulativeactual": 109350.00,
+      "sprk_forecastremaining": 370000.00,
+      "sprk_budgetvariance": 20650.00,
+      "sprk_Budget@odata.bind": "/sprk_budgets(sprk_scenarioid='mvp-budget-001')",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_notes": "Discovery in full swing. Major cost drivers include document review Batches 2-3 covering Pinnacle's first production and patent prosecution history, ESI protocol dispute resolution with opposing counsel, and deposition scheduling coordination. Document review platform and e-discovery hosting fees represent a significant portion of non-labor costs. Court reporter retainer secured for upcoming deposition season. Budget utilization at 21.9% — consistent with projected discovery ramp."
+    },
+    {
+      "sprk_scenarioid": "mvp-spend-003",
+      "sprk_name": "November 2025 Spend Snapshot",
+      "sprk_snapshotdate": "2025-11-30T00:00:00Z",
+      "sprk_periodstart": "2025-11-01T00:00:00Z",
+      "sprk_periodend": "2025-11-30T00:00:00Z",
+      "sprk_actualamount": 63840.00,
+      "sprk_cumulativeactual": 173190.00,
+      "sprk_forecastremaining": 320000.00,
+      "sprk_budgetvariance": 6810.00,
+      "sprk_Budget@odata.bind": "/sprk_budgets(sprk_scenarioid='mvp-budget-001')",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_notes": "Highest monthly spend to date driven by two factors: (1) Baker & Associates legal fees of $48,340 for Morrison deposition preparation and execution, Batch 4 review, supplemental disclosures, and settlement posture analysis; (2) Dr. Patel expert engagement fees of $15,500 for initial patent analysis and AutoForge technical review. Deposition costs (Morrison) and travel to Austin contributed to elevated expense line items. Expert engagement initiated as planned. Budget utilization at 34.6% — slightly ahead of linear pace but within acceptable range given the deposition-heavy month."
+    },
+    {
+      "sprk_scenarioid": "mvp-spend-004",
+      "sprk_name": "December 2025 Spend Snapshot",
+      "sprk_snapshotdate": "2025-12-31T00:00:00Z",
+      "sprk_periodstart": "2025-12-01T00:00:00Z",
+      "sprk_periodend": "2025-12-31T00:00:00Z",
+      "sprk_actualamount": 31890.00,
+      "sprk_cumulativeactual": 205080.00,
+      "sprk_forecastremaining": 285000.00,
+      "sprk_budgetvariance": 9920.00,
+      "sprk_Budget@odata.bind": "/sprk_budgets(sprk_scenarioid='mvp-budget-001')",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_notes": "December spend lower than November as expected with reduced team activity over the holiday period. Primary cost drivers were Wright deposition in Austin, Batch 5 third-party document review, and privilege challenge research. E-discovery hosting remains a consistent monthly expense. Year-end position at $205,080 (41.0% of budget) with 5 months remaining. Discovery costs tracking approximately 8% above initial projections due to ESI disputes and additional third-party subpoena work. Recommended reallocation of $15,000 from Trial Prep to Discovery budget bucket."
+    },
+    {
+      "sprk_scenarioid": "mvp-spend-005",
+      "sprk_name": "January 2026 Spend Snapshot",
+      "sprk_snapshotdate": "2026-01-31T00:00:00Z",
+      "sprk_periodstart": "2026-01-01T00:00:00Z",
+      "sprk_periodend": "2026-01-31T00:00:00Z",
+      "sprk_actualamount": 67420.00,
+      "sprk_cumulativeactual": 272500.00,
+      "sprk_forecastremaining": 215000.00,
+      "sprk_budgetvariance": 12500.00,
+      "sprk_Budget@odata.bind": "/sprk_budgets(sprk_scenarioid='mvp-budget-001')",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_notes": "January was the second-highest spend month, driven by intensive claim construction brief preparation and Dr. Patel's expert report finalization. Baker & Associates fees of $45,670 reflect high partner and associate hours for claim construction briefing, privilege hearing, and Foster deposition. Dr. Patel's invoice of $21,750 covers 24 hours of report drafting plus demonstrative exhibit preparation for the Markman hearing. Budget utilization at 54.5% with 4 months remaining. Expert fees are trending approximately 15% higher than projected due to additional Mark III analysis work. Forecast assumes moderate trial preparation costs and possible settlement discussions reducing total spend."
+    },
+    {
+      "sprk_scenarioid": "mvp-spend-006",
+      "sprk_name": "February 2026 Spend Snapshot",
+      "sprk_snapshotdate": "2026-02-28T00:00:00Z",
+      "sprk_periodstart": "2026-02-01T00:00:00Z",
+      "sprk_periodend": "2026-02-28T00:00:00Z",
+      "sprk_actualamount": 45050.00,
+      "sprk_cumulativeactual": 317550.00,
+      "sprk_forecastremaining": 175000.00,
+      "sprk_budgetvariance": 7450.00,
+      "sprk_Budget@odata.bind": "/sprk_budgets(sprk_scenarioid='mvp-budget-001')",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_notes": "February spend reflects Markman hearing attendance and preparation ($32,250 from Baker & Associates) plus Dr. Patel's rebuttal report research ($12,800). The favorable Markman ruling on February 14 strengthened our negotiating position significantly. Budget utilization at 63.5% with 4 months remaining. Forecast remaining of $175,000 assumes: expert depositions in March ($25,000), trial preparation through June ($100,000), and contingency ($50,000). If settlement discussions progress in Q2 as opposing counsel has signaled, actual remaining spend could be substantially lower. Variance of $7,450 indicates project is tracking slightly under budget overall. Key risk: if case proceeds to trial without settlement, the $175,000 forecast may be insufficient and budget increase of $25,000-$50,000 may be needed."
+    }
+  ]
+}

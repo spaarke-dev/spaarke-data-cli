@@ -1,0 +1,69 @@
+{
+  "entity": "accounts",
+  "records": [
+    {
+      "sprk_scenarioid": "mvp-acct-meridian",
+      "name": "Meridian Corp",
+      "description": "Fortune 500 advanced manufacturing and industrial technology corporation. Client in Meridian Corp v. Pinnacle Industries patent infringement litigation (Case No. 3:2025-cv-04892). Plaintiff alleging infringement of proprietary precision manufacturing process patents.",
+      "industrycode": 22,
+      "revenue": 4200000000.00,
+      "numberofemployees": 12000,
+      "telephone1": "555-392-8000",
+      "websiteurl": "https://www.meridiancorp.example.com",
+      "emailaddress1": "info@meridiancorp.example.com",
+      "address1_line1": "One Meridian Plaza, Suite 4500",
+      "address1_city": "San Francisco",
+      "address1_stateorprovince": "CA",
+      "address1_postalcode": "94105",
+      "address1_country": "United States"
+    },
+    {
+      "sprk_scenarioid": "mvp-acct-pinnacle",
+      "name": "Pinnacle Industries",
+      "description": "Mid-cap technology and engineering firm specializing in automated manufacturing systems. Defendant in Meridian Corp v. Pinnacle Industries patent infringement litigation (Case No. 3:2025-cv-04892). Accused of incorporating Meridian's patented precision manufacturing processes into its AutoForge product line.",
+      "industrycode": 12,
+      "revenue": 800000000.00,
+      "numberofemployees": 3500,
+      "telephone1": "555-741-2200",
+      "websiteurl": "https://www.pinnacleindustries.example.com",
+      "emailaddress1": "info@pinnacleindustries.example.com",
+      "address1_line1": "8200 Research Boulevard, Building C",
+      "address1_city": "Austin",
+      "address1_stateorprovince": "TX",
+      "address1_postalcode": "78759",
+      "address1_country": "United States"
+    },
+    {
+      "sprk_scenarioid": "mvp-acct-baker-llp",
+      "name": "Baker & Associates LLP",
+      "description": "Am Law 200 full-service law firm with nationally recognized intellectual property litigation practice. Representing plaintiff Meridian Corp in patent infringement action against Pinnacle Industries. Lead partner Rachel Torres heads the IP litigation team.",
+      "industrycode": 38,
+      "revenue": 320000000.00,
+      "numberofemployees": 450,
+      "telephone1": "555-628-3400",
+      "websiteurl": "https://www.bakerassociates.example.com",
+      "emailaddress1": "info@bakerassociates.example.com",
+      "address1_line1": "555 California Street, 32nd Floor",
+      "address1_city": "San Francisco",
+      "address1_stateorprovince": "CA",
+      "address1_postalcode": "94104",
+      "address1_country": "United States"
+    },
+    {
+      "sprk_scenarioid": "mvp-acct-chen-law",
+      "name": "Chen Law Group",
+      "description": "Regional law firm with strong patent defense and technology litigation practice serving the Texas technology corridor. Representing defendant Pinnacle Industries in patent infringement action brought by Meridian Corp. Lead partner David Kim specializes in patent defense for manufacturing and engineering companies.",
+      "industrycode": 38,
+      "revenue": 85000000.00,
+      "numberofemployees": 120,
+      "telephone1": "555-476-5500",
+      "websiteurl": "https://www.chenlawgroup.example.com",
+      "emailaddress1": "info@chenlawgroup.example.com",
+      "address1_line1": "100 Congress Avenue, Suite 2200",
+      "address1_city": "Austin",
+      "address1_stateorprovince": "TX",
+      "address1_postalcode": "78701",
+      "address1_country": "United States"
+    }
+  ]
+}

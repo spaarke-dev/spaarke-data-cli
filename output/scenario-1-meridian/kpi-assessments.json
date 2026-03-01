@@ -1,0 +1,71 @@
+{
+  "entity": "sprk_kpiassessments",
+  "records": [
+    {
+      "sprk_scenarioid": "mvp-kpi-001",
+      "sprk_name": "Guidelines Compliance Assessment — February 2026",
+      "sprk_performancearea": "Guidelines Compliance",
+      "sprk_grade": "B+",
+      "sprk_score": 85,
+      "sprk_assessmentdate": "2026-02-15T00:00:00Z",
+      "sprk_criteria": "Measured compliance with court-ordered deadlines, discovery obligations, and internal workflow requirements. Assessed timeliness of filings, completeness of disclosures, and adherence to case management order milestones.",
+      "sprk_notes": "Overall compliance posture is strong. All court-ordered filing deadlines have been met without extensions. Initial disclosures and supplemental disclosures were served on time. Minor deductions for two instances where document production was completed within 48 hours of the deadline rather than with comfortable margin. The Rule 26(e) supplementation was completed on time but could have been more proactive. The team has demonstrated diligent tracking of all deadlines through the case management system, and no sanctions or adverse rulings have resulted from any compliance issues.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')"
+    },
+    {
+      "sprk_scenarioid": "mvp-kpi-002",
+      "sprk_name": "Budget Adherence Assessment — February 2026",
+      "sprk_performancearea": "Budget Adherence",
+      "sprk_grade": "B",
+      "sprk_score": 80,
+      "sprk_assessmentdate": "2026-02-15T00:00:00Z",
+      "sprk_criteria": "Measured actual spend against budgeted amounts across all budget categories. Assessed rate of expenditure relative to project timeline, variance analysis by category, and forecast accuracy of monthly estimates.",
+      "sprk_notes": "At month 7 of an 11-month litigation cycle, cumulative spend of $317,550 represents 63.5% of the $500,000 budget. This is slightly ahead of the linear pace (63.6% of timeline elapsed) but within acceptable variance. The Discovery budget bucket is tracking 8% over projection due to the ESI protocol disputes and additional third-party subpoena work. Expert fees are trending higher than initially projected — Dr. Patel's engagement has required approximately 15% more hours than estimated due to the complexity of the Mark III analysis. Trial preparation spending has not yet commenced, providing some buffer. The team should monitor expert costs closely through the rebuttal phase to avoid overrun.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')"
+    },
+    {
+      "sprk_scenarioid": "mvp-kpi-003",
+      "sprk_name": "Outcome Probability Assessment — February 2026",
+      "sprk_performancearea": "Outcome Probability",
+      "sprk_grade": "B-",
+      "sprk_score": 78,
+      "sprk_assessmentdate": "2026-02-15T00:00:00Z",
+      "sprk_criteria": "Assessed the probability of achieving client objectives based on current case posture. Evaluated strength of infringement claims, vulnerability to invalidity defenses, claim construction outcomes, and damages recovery potential.",
+      "sprk_notes": "The favorable Markman ruling on February 14 significantly strengthened Meridian's infringement position, with 6 of 8 claim terms construed favorably. The broad construction of 'precision alignment mechanism' encompasses all AutoForge models including the Mark III. However, Pinnacle's invalidity defense retains some merit — the combination of the Henderson 2019 paper and the Yamada Japanese patent application presents a non-trivial obviousness argument that will require strong rebuttal testimony from Dr. Patel. Settlement is the most likely outcome, with both parties signaling willingness to discuss resolution in Q2 2026. If the case proceeds to trial, Meridian has a moderate-to-strong probability of prevailing on at least some claims, but the damages calculation introduces additional uncertainty.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')"
+    },
+    {
+      "sprk_scenarioid": "mvp-kpi-004",
+      "sprk_name": "Discovery Completeness Assessment — February 2026",
+      "sprk_performancearea": "Discovery Completeness",
+      "sprk_grade": "A-",
+      "sprk_score": 90,
+      "sprk_assessmentdate": "2026-02-15T00:00:00Z",
+      "sprk_criteria": "Assessed the thoroughness and completeness of fact discovery efforts including document collection, production review, deposition coverage, and interrogatory responses. Evaluated ESI collection methodology and privilege review processes.",
+      "sprk_notes": "Document collection and review have been thorough across all custodians and data sources. Seven batches of document review have been completed or are in progress, covering approximately 13,300 documents to date. ESI forensic collection identified 43 potentially relevant deleted documents, demonstrating the value of the comprehensive collection approach. The privilege log review identified questionable assertions that were successfully challenged in court. Minor gaps exist in two areas: (1) two third-party subpoena responses remain outstanding pending the court's recent order, and (2) damages discovery documents are still being reviewed (Batch 7, currently in progress). Three of five depositions are complete, with the two expert depositions scheduled for March. Overall, discovery has been well-executed and is on track for the March 15 fact discovery cutoff.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')"
+    },
+    {
+      "sprk_scenarioid": "mvp-kpi-005",
+      "sprk_name": "Expert Preparation Assessment — February 2026",
+      "sprk_performancearea": "Expert Preparation",
+      "sprk_grade": "A",
+      "sprk_score": 95,
+      "sprk_assessmentdate": "2026-02-15T00:00:00Z",
+      "sprk_criteria": "Assessed the quality, timeliness, and persuasiveness of expert work product. Evaluated expert report strength, responsiveness to attorney feedback, deposition readiness, and ability to communicate complex technical concepts clearly.",
+      "sprk_notes": "Dr. Robert Patel has delivered an outstanding initial expert report with a thorough claim-by-claim infringement analysis across all three asserted patents. His analysis of the AutoForge Mark III implementation was particularly strong, identifying clear element-by-element correspondence with the patent claims. Dr. Patel incorporated all attorney review comments promptly and strengthened his conclusions to state opinions to a reasonable degree of engineering certainty. His preliminary rebuttal analysis of Dr. Nakamura's invalidity references demonstrates deep understanding of the prior art landscape and identifies persuasive technical distinctions. Dr. Patel also prepared effective demonstrative exhibits for the Markman hearing. The rebuttal report draft is on track for March 15 delivery. Dr. Patel's deposition preparation is well underway for the March 10 session.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')"
+    },
+    {
+      "sprk_scenarioid": "mvp-kpi-006",
+      "sprk_name": "Settlement Potential Assessment — February 2026",
+      "sprk_performancearea": "Settlement Potential",
+      "sprk_grade": "C+",
+      "sprk_score": 72,
+      "sprk_assessmentdate": "2026-02-15T00:00:00Z",
+      "sprk_criteria": "Assessed the likelihood and timing of reaching a negotiated settlement. Evaluated opposing party's settlement signals, relative bargaining positions, cost-benefit analysis of continued litigation versus settlement, and client alignment on resolution parameters.",
+      "sprk_notes": "Settlement potential has improved modestly following the favorable Markman ruling, but remains uncertain. Pinnacle Industries initially resisted mediation when approached in November 2025, suggesting they were not yet feeling sufficient pressure to negotiate seriously. However, their post-Markman inquiry on February 21 signals a meaningful shift in posture — they are now proposing 'substantive discussions' with potential mediator involvement in Q2 2026. The primary risk factor is timing: Pinnacle may be using settlement discussions as a delay tactic while preparing stronger invalidity arguments for trial. Meridian's settlement authority range ($15M-$25M lump sum or 4-6% ongoing royalty) appears reasonable based on the damages analysis, but the parties have not yet exchanged formal demands. The team recommends making a formal demand after the expert depositions in March to maximize leverage. Overall, settlement is more likely than not, but the timeline extends into Q2 2026 at earliest.",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')"
+    }
+  ]
+}

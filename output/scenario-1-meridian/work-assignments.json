@@ -1,0 +1,71 @@
+{
+  "entity": "sprk_workassignments",
+  "records": [
+    {
+      "sprk_scenarioid": "mvp-wa-001",
+      "sprk_name": "Discovery Document Review — Batch 1",
+      "sprk_assignmentstatus": 100000002,
+      "sprk_startdate": "2025-10-01",
+      "sprk_enddate": "2025-11-15",
+      "sprk_description": "First-pass review of 8,000 documents collected from Meridian Corp custodians. Includes responsiveness determination, privilege flagging, and coding for key issues related to thermal compression molding patent claims.",
+      "sprk_Assignee@odata.bind": "/contacts(sprk_scenarioid='mvp-contact-huang-lisa')",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_Project@odata.bind": "/sprk_projects(sprk_scenarioid='mvp-proj-discovery')"
+    },
+    {
+      "sprk_scenarioid": "mvp-wa-002",
+      "sprk_name": "Discovery Document Review — Batch 2",
+      "sprk_assignmentstatus": 100000002,
+      "sprk_startdate": "2025-11-15",
+      "sprk_enddate": "2025-12-31",
+      "sprk_description": "Second-pass review of 7,000 documents from Pinnacle Industries production. Includes cross-referencing with Meridian documents, identifying key exhibits, and preparing privilege log entries for withheld documents.",
+      "sprk_Assignee@odata.bind": "/contacts(sprk_scenarioid='mvp-contact-huang-lisa')",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_Project@odata.bind": "/sprk_projects(sprk_scenarioid='mvp-proj-discovery')"
+    },
+    {
+      "sprk_scenarioid": "mvp-wa-003",
+      "sprk_name": "Expert Report Review — Manufacturing",
+      "sprk_assignmentstatus": 100000002,
+      "sprk_startdate": "2025-12-15",
+      "sprk_enddate": "2026-01-31",
+      "sprk_description": "Review and analysis of Dr. Patel's manufacturing process expert report. Includes verification of technical claims against discovery documents, coordination of supplemental analysis requests, and preparation of report summary for partner review.",
+      "sprk_Assignee@odata.bind": "/contacts(sprk_scenarioid='mvp-contact-park-michael')",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_Project@odata.bind": "/sprk_projects(sprk_scenarioid='mvp-proj-expert')"
+    },
+    {
+      "sprk_scenarioid": "mvp-wa-004",
+      "sprk_name": "Deposition Preparation — Key Witnesses",
+      "sprk_assignmentstatus": 100000000,
+      "sprk_startdate": "2026-01-15",
+      "sprk_enddate": "2026-02-28",
+      "sprk_description": "Preparation for depositions of key Pinnacle Industries witnesses including Thomas Wright (CEO) and technical staff. Includes deposition outline drafting, exhibit selection, and witness preparation sessions for Meridian's James Morrison.",
+      "sprk_Assignee@odata.bind": "/contacts(sprk_scenarioid='mvp-contact-torres-rachel')",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_Project@odata.bind": "/sprk_projects(sprk_scenarioid='mvp-proj-discovery')"
+    },
+    {
+      "sprk_scenarioid": "mvp-wa-005",
+      "sprk_name": "Motion for Summary Judgment Draft",
+      "sprk_assignmentstatus": 100000000,
+      "sprk_startdate": "2026-02-01",
+      "sprk_enddate": "2026-03-31",
+      "sprk_description": "Drafting motion for partial summary judgment on patent infringement claims. Includes legal research on claim construction standards, analysis of Markman hearing outcomes in similar cases, and preparation of supporting declarations and exhibits.",
+      "sprk_Assignee@odata.bind": "/contacts(sprk_scenarioid='mvp-contact-park-michael')",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_Project@odata.bind": "/sprk_projects(sprk_scenarioid='mvp-proj-trial-prep')"
+    },
+    {
+      "sprk_scenarioid": "mvp-wa-006",
+      "sprk_name": "Trial Exhibit Preparation",
+      "sprk_assignmentstatus": 100000001,
+      "sprk_startdate": "2026-04-01",
+      "sprk_enddate": "2026-05-31",
+      "sprk_description": "Compilation and organization of trial exhibits. Includes exhibit numbering and indexing, preparation of demonstrative exhibits for patent claim visualization, and coordination with trial technology vendor for courtroom presentation setup.",
+      "sprk_Assignee@odata.bind": "/contacts(sprk_scenarioid='mvp-contact-huang-lisa')",
+      "sprk_Matter@odata.bind": "/sprk_matters(sprk_scenarioid='mvp-matter-001')",
+      "sprk_Project@odata.bind": "/sprk_projects(sprk_scenarioid='mvp-proj-trial-prep')"
+    }
+  ]
+}
