@@ -1,0 +1,84 @@
+<task id="003" project="phase-0-data-in-dataverse">
+  <metadata>
+    <title>Generate Document Records JSON with AI Enrichment</title>
+    <phase>1 - Data Design &amp; Generation</phase>
+    <tags>data-generation, json, documents, ai-enrichment</tags>
+    <estimate>3-4 hours</estimate>
+    <dependencies>none</dependencies>
+    <parallel-group>A</parallel-group>
+  </metadata>
+
+  <prompt>
+    <goal>Generate complete sprk_document JSON records with pre-baked AI enrichment fields for all documents in Scenario 1</goal>
+    <context>
+      Generate 60-80 document records for the Meridian v. Pinnacle litigation scenario. Each document must have realistic AI enrichment fields pre-populated.
+
+      Document mix:
+      - Commercial contracts (8): MSA, license agreements, SOWs from the disputed business relationship
+      - NDAs (3): Between parties and experts
+      - Pleadings/motions (6): Complaint, answer, motions to compel, summary judgment
+      - Discovery documents (12): Interrogatories, document requests, depositions transcripts
+      - Expert reports (4): Manufacturing process analysis, patent validity, damages calculation
+      - Internal memos (6): Case strategy, settlement analysis, risk assessment
+      - Email correspondence (15): Attorney-client, opposing counsel, expert communications
+      - Invoices as documents (4): Scanned invoice PDFs
+      - Court orders (3): Scheduling order, discovery order, protective order
+
+      AI Enrichment fields per document:
+      - sprk_filesummary: 2-4 paragraph detailed summary
+      - sprk_filetldr: 1-2 sentence TL;DR
+      - sprk_keywords: comma-separated (5-10 keywords)
+      - sprk_documenttype: option set value (map to Dataverse choice)
+      - sprk_extractorganization: newline-separated org names
+      - sprk_extractpeople: newline-separated person names
+      - sprk_extractfees: newline-separated fee amounts (if applicable)
+      - sprk_extractdates: newline-separated dates
+      - sprk_extractreference: newline-separated references
+      - sprk_extractdocumenttype: text classification label
+
+      Email metadata (for email documents only):
+      - sprk_emailsubject, sprk_emailfrom, sprk_emailto, sprk_emailcc
+      - sprk_emaildate, sprk_emailbody (truncated to 10K chars)
+      - sprk_emaildirection: 100000000=Received, 100000001=Sent
+
+      Source types: 659490000=UserUpload, 659490001=EmailReceived, 659490002=EmailArchive
+    </context>
+    <constraints>
+      - Entity collection: sprk_documents
+      - Document IDs: mvp-doc-001 through mvp-doc-080
+      - Each document links to matter (sprk_Matter@odata.bind) and optionally project
+      - statuscode: 1 (Draft) initially — will be set to Active (421500001) after file upload
+      - sprk_hasfile: false initially — will be patched to true after SPE upload
+      - AI enrichment fields MUST be populated for every document
+      - File metadata (filename, filesize, mimetype) must be realistic even before actual files exist
+      - Email documents must have complete email metadata fields
+    </constraints>
+  </prompt>
+
+  <steps>
+    <step>Design document inventory — allocate IDs and types across the 60-80 documents</step>
+    <step>Generate contract document records (8) with detailed summaries and clause extractions</step>
+    <step>Generate NDA records (3) with party and term extractions</step>
+    <step>Generate pleading/motion records (6) with legal issue summaries</step>
+    <step>Generate discovery document records (12) with content summaries</step>
+    <step>Generate expert report records (4) with technical summaries</step>
+    <step>Generate memo records (6) with strategy and risk summaries</step>
+    <step>Generate email correspondence records (15) with full email metadata</step>
+    <step>Generate invoice document records (4) with fee extractions</step>
+    <step>Generate court order records (3) with ruling summaries</step>
+    <step>Write all records to documents.json and verify completeness</step>
+  </steps>
+
+  <outputs>
+    <file>output/scenario-1-meridian/documents.json</file>
+  </outputs>
+
+  <acceptance-criteria>
+    <criterion>60-80 document records generated with unique IDs</criterion>
+    <criterion>Every document has non-null sprk_filesummary, sprk_filetldr, sprk_keywords</criterion>
+    <criterion>Every document has sprk_extractorganization and sprk_extractpeople populated</criterion>
+    <criterion>All 15 email documents have complete email metadata fields</criterion>
+    <criterion>Documents are distributed across all types (contracts, pleadings, memos, emails, etc.)</criterion>
+    <criterion>All documents reference mvp-matter-001 and appropriate projects</criterion>
+  </acceptance-criteria>
+</task>

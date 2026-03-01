@@ -1,0 +1,53 @@
+<task id="007" project="phase-0-data-in-dataverse">
+  <metadata>
+    <title>Load Layers 1-3 into Dataverse (Core Records + Documents)</title>
+    <phase>3 - Loading &amp; Validation</phase>
+    <tags>loading, dataverse, webapi, deployment</tags>
+    <estimate>1-2 hours</estimate>
+    <dependencies>005, 006</dependencies>
+    <parallel-group>none</parallel-group>
+  </metadata>
+
+  <prompt>
+    <goal>Execute loading scripts to populate Dataverse with core business records and document records</goal>
+    <context>
+      Run the PowerShell scripts created in Task 006 to load:
+      - Layer 1-2: accounts → contacts → matter → projects → budgets → invoices → work assignments
+      - Layer 3: sprk_document records with AI enrichment fields
+
+      This must run sequentially because each layer depends on the previous (documents reference matters, matters reference accounts, etc.).
+
+      Prerequisite: az login must be active with access to https://spaarkedev1.crm.dynamics.com
+    </context>
+    <constraints>
+      - Run Load-CoreRecords.ps1 first, verify success
+      - Run Load-DocumentRecords.ps1 second, verify success
+      - Log all created record GUIDs for use in subsequent tasks
+      - If any records fail, document which ones and why
+      - Do NOT load activity records yet (Task 009)
+      - Do NOT upload files yet (Task 008)
+    </constraints>
+  </prompt>
+
+  <steps>
+    <step>Verify Azure CLI authentication: az account show</step>
+    <step>Run Load-CoreRecords.ps1 — load accounts, contacts, matter, projects, budgets, invoices, work assignments</step>
+    <step>Verify core records in Dataverse: query each entity for expected counts</step>
+    <step>Run Load-DocumentRecords.ps1 — load sprk_document records with AI enrichment</step>
+    <step>Verify document records: query sprk_documents for expected count and non-null AI fields</step>
+    <step>Document any failures or adjustments needed</step>
+  </steps>
+
+  <outputs>
+    <file>notes/loading-log-layers-1-3.md (loading results and any issues)</file>
+  </outputs>
+
+  <acceptance-criteria>
+    <criterion>4 accounts created/updated in Dataverse</criterion>
+    <criterion>12 contacts created/updated with parent account links</criterion>
+    <criterion>1 matter, 3 projects, 1 budget created with correct relationships</criterion>
+    <criterion>10 invoices created linked to matter and vendor accounts</criterion>
+    <criterion>60-80 document records created with AI enrichment fields populated</criterion>
+    <criterion>All lookup relationships resolve correctly</criterion>
+  </acceptance-criteria>
+</task>

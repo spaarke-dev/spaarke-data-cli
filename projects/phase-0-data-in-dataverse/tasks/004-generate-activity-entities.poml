@@ -1,0 +1,94 @@
+<task id="004" project="phase-0-data-in-dataverse">
+  <metadata>
+    <title>Generate Activity Entity JSON — Events, Communications, KPIs, Billing, Spend</title>
+    <phase>1 - Data Design &amp; Generation</phase>
+    <tags>data-generation, json, events, communications, kpis, billing</tags>
+    <estimate>2-3 hours</estimate>
+    <dependencies>none</dependencies>
+    <parallel-group>A</parallel-group>
+  </metadata>
+
+  <prompt>
+    <goal>Generate complete JSON data files for all activity/transactional entities in Scenario 1</goal>
+    <context>
+      Generate activity records spanning the 6-month litigation timeline (Aug 2025 - Feb 2026, with future events through Jun 2026).
+
+      Events (50):
+      - Filing deadlines: Complaint filed, Answer due, Discovery cutoff, Expert reports due, Trial date
+      - Deposition dates: 4-5 depositions of key witnesses
+      - Review tasks: Document review batches, privilege review, expert report review
+      - Court hearings: Status conferences, motion hearings
+      - Internal milestones: Strategy sessions, settlement discussions, budget reviews
+      - Status progression: past events Completed, current events Open, future events Planned
+      - Priority mix: ~20% High/Urgent, ~50% Normal, ~30% Low
+
+      Regarding record types (polymorphic lookups):
+      - Type 0: sprk_regardingproject (project-level tasks)
+      - Type 1: sprk_regardingmatter (matter-level deadlines)
+      - Type 2: sprk_regardinginvoice (billing-related events)
+      - Each event has sprk_regardingrecordtype + the specific regarding lookup field
+
+      Communications (35):
+      - Attorney-client emails (12): Sarah Chen ↔ Rachel Torres
+      - Opposing counsel correspondence (8): Baker &amp; Associates ↔ Chen Law Group
+      - Expert communications (6): Dr. Patel/Nakamura reports and scheduling
+      - Internal team emails (5): Case strategy, assignment updates
+      - Court notifications (4): Scheduling orders, hearing notices
+      - Each has subject, body, direction (Inbound/Outbound), sentby contact reference
+
+      KPI Assessments (6):
+      - Guidelines Compliance: Grade B+ (minor discovery delays)
+      - Budget Adherence: Grade B (64% utilized, on track)
+      - Outcome Probability: Grade B- (favorable but uncertain)
+      - Discovery Completeness: Grade A- (thorough document collection)
+      - Expert Preparation: Grade A (strong expert reports)
+      - Settlement Potential: Grade C+ (opposing party resistant)
+
+      Billing Events (60-70):
+      - Line items for each of the 10 invoices
+      - Timekeeper entries: Partner ($650/hr), Associate ($350/hr), Paralegal ($175/hr)
+      - Expense entries: Filing fees, expert fees, deposition costs, travel
+      - Each links to parent invoice
+
+      Spend Snapshots (6):
+      - Monthly snapshots: Sep 2025 through Feb 2026
+      - Track actual vs. forecast per budget bucket
+      - Show spend acceleration in discovery phase
+    </context>
+    <constraints>
+      - Entity collections: sprk_events, sprk_communications, sprk_kpiassessments, sprk_billingevents, sprk_spendsnapshots
+      - Events use polymorphic regarding lookups (sprk_regardingrecordtype + sprk_regarding{entity})
+      - All dates ISO 8601
+      - Communications: sprk_direction 100000000=Inbound, 100000001=Outbound
+      - KPI grades: use option set values (map letter grades to numeric)
+      - Billing events: amounts must sum to invoice totals
+      - Spend snapshots: actual amounts must match billing event totals per period
+    </constraints>
+  </prompt>
+
+  <steps>
+    <step>Generate events.json with 50 event records spanning the litigation timeline</step>
+    <step>Generate communications.json with 35 communication records</step>
+    <step>Generate kpi-assessments.json with 6 assessment records</step>
+    <step>Generate billing-events.json with 60-70 line items matching invoice totals</step>
+    <step>Generate spend-snapshots.json with 6 monthly snapshots</step>
+    <step>Verify temporal consistency — dates progress logically, amounts balance</step>
+  </steps>
+
+  <outputs>
+    <file>output/scenario-1-meridian/events.json</file>
+    <file>output/scenario-1-meridian/communications.json</file>
+    <file>output/scenario-1-meridian/kpi-assessments.json</file>
+    <file>output/scenario-1-meridian/billing-events.json</file>
+    <file>output/scenario-1-meridian/spend-snapshots.json</file>
+  </outputs>
+
+  <acceptance-criteria>
+    <criterion>50 events with realistic date progression and status mix</criterion>
+    <criterion>35 communications with subjects, bodies, and contact references</criterion>
+    <criterion>6 KPI assessments with grades and narrative justifications</criterion>
+    <criterion>60-70 billing events that sum to invoice totals</criterion>
+    <criterion>6 spend snapshots with actual vs. forecast tracking</criterion>
+    <criterion>All regarding lookups use correct polymorphic pattern</criterion>
+  </acceptance-criteria>
+</task>

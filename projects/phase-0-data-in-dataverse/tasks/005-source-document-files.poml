@@ -1,0 +1,75 @@
+<task id="005" project="phase-0-data-in-dataverse">
+  <metadata>
+    <title>Source CUAD Contracts and Generate Synthetic Document Files</title>
+    <phase>2 - Document File Sourcing</phase>
+    <tags>documents, cuad, synthetic, files</tags>
+    <estimate>2-3 hours</estimate>
+    <dependencies>001, 002, 003, 004</dependencies>
+    <parallel-group>B</parallel-group>
+  </metadata>
+
+  <prompt>
+    <goal>Create 25-30 actual document files (PDF, DOCX, EML) for upload to SharePoint Embedded</goal>
+    <context>
+      Source and generate document files that correspond to a subset of the sprk_document records from Task 003. Not every document record needs an actual file — but at least 25-30 should have real files for demo purposes.
+
+      File sourcing strategy:
+      1. CUAD contracts (5-8 files): Download from the CUAD dataset (CC BY 4.0). Select commercial contracts relevant to a technology licensing / manufacturing dispute. Use as-is (don't modify PDFs). These demonstrate real-world document analysis.
+
+      2. Synthetic legal documents (8-10 files): Generate as markdown, then note for later conversion:
+         - 2-3 pleadings/motions (complaint, motion to compel, motion for summary judgment)
+         - 2-3 internal memos (case strategy, settlement analysis, risk assessment)
+         - 2-3 expert report summaries
+         - Write realistic legal content with case-specific details
+
+      3. Synthetic emails (8-10 files): Generate as .eml (RFC 822 text format):
+         - Attorney-client correspondence
+         - Opposing counsel letters
+         - Expert scheduling emails
+         - Include proper headers (From, To, Date, Subject, MIME-Version, Content-Type)
+
+      4. Invoice documents (2-3 files): Generate as text-based representations of invoices
+
+      File naming convention: {mvp-doc-id}_{descriptive-name}.{ext}
+      Example: mvp-doc-001_meridian-pinnacle-msa.pdf
+    </context>
+    <constraints>
+      - CUAD files: CC BY 4.0 license — must document in DATA-PROVENANCE.md
+      - Synthetic files: Use realistic legal language but clearly fictional entities
+      - EML files: Must be valid RFC 822 format with proper headers
+      - All files stored in output/scenario-1-meridian/files/ with subdirectories by type
+      - File sizes should be realistic (contracts 200KB-2MB, emails 5-50KB, memos 50-200KB)
+      - Track which mvp-doc-ID maps to which file for the loading phase
+    </constraints>
+  </prompt>
+
+  <steps>
+    <step>Create output/scenario-1-meridian/files/ directory structure (contracts/, pleadings/, memos/, emails/, invoices/)</step>
+    <step>Download 5-8 CUAD contract PDFs — select commercial/technology contracts</step>
+    <step>Generate synthetic pleading/motion documents as markdown files</step>
+    <step>Generate synthetic internal memo documents as markdown files</step>
+    <step>Generate synthetic expert report summaries as markdown files</step>
+    <step>Generate synthetic email .eml files with proper RFC 822 headers</step>
+    <step>Generate invoice document representations</step>
+    <step>Create file-manifest.json mapping mvp-doc-IDs to file paths</step>
+    <step>Begin DATA-PROVENANCE.md with CUAD attribution</step>
+  </steps>
+
+  <outputs>
+    <file>output/scenario-1-meridian/files/contracts/ (5-8 PDFs)</file>
+    <file>output/scenario-1-meridian/files/pleadings/ (3 markdown files)</file>
+    <file>output/scenario-1-meridian/files/memos/ (3 markdown files)</file>
+    <file>output/scenario-1-meridian/files/emails/ (8-10 EML files)</file>
+    <file>output/scenario-1-meridian/files/invoices/ (2-3 files)</file>
+    <file>output/scenario-1-meridian/file-manifest.json</file>
+    <file>docs/DATA-PROVENANCE.md</file>
+  </outputs>
+
+  <acceptance-criteria>
+    <criterion>25-30 actual files created across all document types</criterion>
+    <criterion>CUAD contracts downloaded and attributed in DATA-PROVENANCE.md</criterion>
+    <criterion>EML files have valid RFC 822 headers</criterion>
+    <criterion>file-manifest.json maps each file to its mvp-doc-ID</criterion>
+    <criterion>All files have realistic content and sizing</criterion>
+  </acceptance-criteria>
+</task>

@@ -1,0 +1,56 @@
+<task id="008" project="phase-0-data-in-dataverse">
+  <metadata>
+    <title>Upload Document Files to SPE and Link to Document Records</title>
+    <phase>3 - Loading &amp; Validation</phase>
+    <tags>loading, spe, bff-api, files, deployment</tags>
+    <estimate>1-2 hours</estimate>
+    <dependencies>007</dependencies>
+    <parallel-group>none</parallel-group>
+  </metadata>
+
+  <prompt>
+    <goal>Upload 25-30 document files to SharePoint Embedded via BFF API and patch document records with storage references</goal>
+    <context>
+      Upload files from output/scenario-1-meridian/files/ to SPE containers via the BFF API, then update corresponding sprk_document records with graphitemid and graphdriveid.
+
+      BFF API endpoints:
+      - Small files (&lt;4MB): PUT /api/containers/{containerId}/files/{path}
+      - Large files: POST /api/containers/{containerId}/upload (session), then PUT chunks
+
+      After upload, patch each sprk_document record:
+      - sprk_graphitemid = Graph item ID from upload response
+      - sprk_graphdriveid = Graph drive ID
+      - sprk_hasfile = true
+      - statuscode = 421500001 (Active)
+
+      Use file-manifest.json to map files to document record IDs.
+    </context>
+    <constraints>
+      - BFF API: https://spe-api-dev-67e2xz.azurewebsites.net
+      - Must authenticate to BFF API (likely same Azure AD token flow)
+      - Most demo files will be &lt;4MB (use small file upload)
+      - Run Upload-SpeFiles.ps1 from Task 006
+      - After upload, verify files are accessible
+    </constraints>
+  </prompt>
+
+  <steps>
+    <step>Verify BFF API is accessible: GET /healthz</step>
+    <step>Run Upload-SpeFiles.ps1 to upload all files from output/scenario-1-meridian/files/</step>
+    <step>Verify upload responses — capture graphitemid and graphdriveid for each file</step>
+    <step>Patch sprk_document records with storage references (graphitemid, graphdriveid, hasfile=true, status=Active)</step>
+    <step>Verify files are accessible through BFF API</step>
+    <step>Document any failures — some files may need manual retry</step>
+  </steps>
+
+  <outputs>
+    <file>notes/loading-log-spe-files.md (upload results and any issues)</file>
+  </outputs>
+
+  <acceptance-criteria>
+    <criterion>25-30 files uploaded to SPE containers</criterion>
+    <criterion>Corresponding document records patched with graphitemid and graphdriveid</criterion>
+    <criterion>Document records with files have hasfile=true and status=Active</criterion>
+    <criterion>Files accessible via BFF API GET endpoint</criterion>
+  </acceptance-criteria>
+</task>

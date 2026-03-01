@@ -1,0 +1,66 @@
+<task id="001" project="phase-0-data-in-dataverse">
+  <metadata>
+    <title>Generate Foundation Entity JSON — Accounts and Contacts</title>
+    <phase>1 - Data Design &amp; Generation</phase>
+    <tags>data-generation, json, accounts, contacts</tags>
+    <estimate>1-2 hours</estimate>
+    <dependencies>none</dependencies>
+    <parallel-group>A</parallel-group>
+  </metadata>
+
+  <prompt>
+    <goal>Generate complete JSON data files for accounts and contacts in the Meridian v. Pinnacle scenario</goal>
+    <context>
+      Scenario: Active patent infringement litigation. Meridian Corp (client) alleges Pinnacle Industries infringed on manufacturing process patents. 6 months in.
+
+      Required accounts (4):
+      - mvp-acct-meridian: Meridian Corp (client, Manufacturing, Fortune 500)
+      - mvp-acct-pinnacle: Pinnacle Industries (opposing party, Technology)
+      - mvp-acct-baker-llp: Baker &amp; Associates LLP (plaintiff's law firm)
+      - mvp-acct-chen-law: Chen Law Group (defendant's law firm)
+
+      Required contacts (12):
+      - Sarah Chen: General Counsel, Meridian Corp (shared across future scenarios)
+      - James Morrison: VP Engineering, Meridian Corp (key witness)
+      - Rachel Torres: Lead Partner, Baker &amp; Associates (plaintiff attorney)
+      - Michael Park: Senior Associate, Baker &amp; Associates
+      - Lisa Huang: Paralegal, Baker &amp; Associates
+      - David Kim: Lead Partner, Chen Law Group (defense attorney)
+      - Jennifer Walsh: Senior Associate, Chen Law Group
+      - Dr. Robert Patel: Expert Witness (manufacturing processes)
+      - Dr. Emily Nakamura: Expert Witness (patent analysis)
+      - Hon. Margaret Sullivan: Judge, US District Court
+      - Thomas Wright: CEO, Pinnacle Industries
+      - Amanda Foster: In-house Counsel, Pinnacle Industries
+
+      Dataverse Web API format. Use @example.com for emails. Include realistic addresses, phone numbers, job titles.
+    </context>
+    <constraints>
+      - All IDs use mvp- prefix
+      - Email domain: @example.com (RFC 2606)
+      - Accounts use entity collection: accounts
+      - Contacts use entity collection: contacts
+      - Include all standard CRM fields (name, address, phone, email, jobtitle, etc.)
+      - Each contact must reference its parent account via parentcustomerid@odata.bind
+    </constraints>
+  </prompt>
+
+  <steps>
+    <step>Create output/scenario-1-meridian/ directory</step>
+    <step>Generate accounts.json with 4 account records in Dataverse Web API format</step>
+    <step>Generate contacts.json with 12 contact records, each linked to parent account</step>
+    <step>Verify JSON is valid and all cross-references use correct ID convention</step>
+  </steps>
+
+  <outputs>
+    <file>output/scenario-1-meridian/accounts.json</file>
+    <file>output/scenario-1-meridian/contacts.json</file>
+  </outputs>
+
+  <acceptance-criteria>
+    <criterion>accounts.json contains 4 records with realistic firm details</criterion>
+    <criterion>contacts.json contains 12 records with parent account references</criterion>
+    <criterion>All emails use @example.com domain</criterion>
+    <criterion>JSON is valid and parseable</criterion>
+  </acceptance-criteria>
+</task>

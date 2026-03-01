@@ -1,0 +1,76 @@
+<task id="002" project="phase-0-data-in-dataverse">
+  <metadata>
+    <title>Generate Core Business Entity JSON — Matter, Projects, Budgets, Invoices, Work Assignments</title>
+    <phase>1 - Data Design &amp; Generation</phase>
+    <tags>data-generation, json, matter, projects, budgets, invoices</tags>
+    <estimate>2-3 hours</estimate>
+    <dependencies>none</dependencies>
+    <parallel-group>A</parallel-group>
+  </metadata>
+
+  <prompt>
+    <goal>Generate complete JSON data files for core business entities in the Meridian v. Pinnacle scenario</goal>
+    <context>
+      Scenario: Patent infringement litigation, opened August 15, 2025. Projected trial date June 30, 2026.
+
+      Matter (1):
+      - mvp-matter-001: "Meridian Corp v. Pinnacle Industries"
+        Type: Litigation, Status: Active, Practice Area: Intellectual Property
+        Client: mvp-acct-meridian, Opposing: mvp-acct-pinnacle
+        Responsible Attorney: mvp-contact-torres (Rachel Torres)
+
+      Projects (3):
+      - mvp-proj-discovery: "Document Discovery" — started Sep 2025, ongoing
+      - mvp-proj-expert: "Expert Analysis" — started Nov 2025, ongoing
+      - mvp-proj-trial-prep: "Trial Preparation" — starts Mar 2026, pending
+
+      Budget (1):
+      - mvp-budget-001: $500,000 litigation budget, period Aug 2025 - Jun 2026
+      - Budget buckets: Discovery ($150K), Expert Fees ($100K), Trial Prep ($120K), Depositions ($80K), Other ($50K)
+
+      Invoices (10):
+      - Monthly invoices from Baker &amp; Associates LLP, Aug 2025 through Feb 2026 (7 invoices)
+      - Expert witness invoices from Dr. Patel and Dr. Nakamura (3 invoices)
+      - Amounts range: $28K-$65K for law firm, $8K-$25K for experts
+      - Total billed to date: ~$320K of $500K budget
+
+      Work Assignments (6):
+      - Document review assignments for paralegals
+      - Expert report preparation for attorneys
+      - Deposition prep assignments
+    </context>
+    <constraints>
+      - Entity collections: sprk_matters, sprk_projects, sprk_budgets, sprk_invoices, sprk_workassignments
+      - Lookups use @odata.bind format: "sprk_Matter@odata.bind": "/sprk_matters(guid)"
+      - For Phase 0, use placeholder GUIDs where actual Dataverse GUIDs aren't known yet — loading scripts will resolve
+      - Invoice amounts must sum to ~$320K total
+      - Budget utilization ~64% ($320K of $500K)
+      - All dates in ISO 8601 format
+    </constraints>
+  </prompt>
+
+  <steps>
+    <step>Generate matters.json with 1 matter record</step>
+    <step>Generate projects.json with 3 project records linked to matter</step>
+    <step>Generate budgets.json with 1 budget + budget bucket records</step>
+    <step>Generate invoices.json with 10 invoice records linked to matter and vendor accounts</step>
+    <step>Generate work-assignments.json with 6 assignment records</step>
+    <step>Verify all cross-references are consistent and amounts sum correctly</step>
+  </steps>
+
+  <outputs>
+    <file>output/scenario-1-meridian/matters.json</file>
+    <file>output/scenario-1-meridian/projects.json</file>
+    <file>output/scenario-1-meridian/budgets.json</file>
+    <file>output/scenario-1-meridian/invoices.json</file>
+    <file>output/scenario-1-meridian/work-assignments.json</file>
+  </outputs>
+
+  <acceptance-criteria>
+    <criterion>Matter record has correct type, status, dates, and party references</criterion>
+    <criterion>3 projects linked to matter with appropriate date ranges</criterion>
+    <criterion>Budget of $500K with 5 budget buckets summing to $500K</criterion>
+    <criterion>10 invoices totaling ~$320K with realistic line items</criterion>
+    <criterion>6 work assignments linked to matter/projects with assignees</criterion>
+  </acceptance-criteria>
+</task>

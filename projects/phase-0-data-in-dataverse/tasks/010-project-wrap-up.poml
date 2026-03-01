@@ -1,0 +1,37 @@
+<task id="010" project="phase-0-data-in-dataverse">
+  <metadata>
+    <title>Project Wrap-up — DATA-PROVENANCE.md and Lessons Learned</title>
+    <phase>4 - Wrap-up</phase>
+    <tags>documentation, wrap-up</tags>
+    <estimate>1 hour</estimate>
+    <dependencies>009</dependencies>
+    <parallel-group>none</parallel-group>
+  </metadata>
+
+  <prompt>
+    <goal>Finalize DATA-PROVENANCE.md, document lessons learned, update README status</goal>
+    <context>
+      Wrap up Phase 0 by documenting all data sources used, capturing lessons learned for Phase 1 (CLI development), and updating project status.
+    </context>
+  </prompt>
+
+  <steps>
+    <step>Finalize docs/DATA-PROVENANCE.md with all sources (CUAD files used, synthetic content, open templates)</step>
+    <step>Create notes/lessons-learned.md documenting: entity schema surprises, loading order issues, API quirks, timing, what worked well</step>
+    <step>Update README.md graduation criteria checkboxes</step>
+    <step>Update TASK-INDEX.md — all tasks marked complete</step>
+    <step>Commit final state to feature branch</step>
+  </steps>
+
+  <outputs>
+    <file>docs/DATA-PROVENANCE.md (finalized)</file>
+    <file>notes/lessons-learned.md</file>
+    <file>README.md (updated status)</file>
+  </outputs>
+
+  <acceptance-criteria>
+    <criterion>DATA-PROVENANCE.md lists every data source with license info</criterion>
+    <criterion>Lessons learned documented for Phase 1 consumption</criterion>
+    <criterion>All README graduation criteria checked or noted</criterion>
+  </acceptance-criteria>
+</task>

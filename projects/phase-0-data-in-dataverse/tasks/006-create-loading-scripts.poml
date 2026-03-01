@@ -1,0 +1,76 @@
+<task id="006" project="phase-0-data-in-dataverse">
+  <metadata>
+    <title>Create PowerShell Loading Scripts</title>
+    <phase>2 - Document File Sourcing</phase>
+    <tags>powershell, scripts, dataverse-webapi, loading</tags>
+    <estimate>3-4 hours</estimate>
+    <dependencies>001, 002, 003, 004</dependencies>
+    <parallel-group>B</parallel-group>
+  </metadata>
+
+  <prompt>
+    <goal>Create idempotent PowerShell scripts that load all generated JSON data into Dataverse via Web API and upload files to SPE via BFF API</goal>
+    <context>
+      Create 7 PowerShell scripts following the patterns from the spaarke product repo (Invoke-DataverseApi.ps1, Create-ActionSeedRecords.ps1).
+
+      Scripts to create:
+      1. Invoke-DataverseApi.ps1 — Reusable helper (auth, GET/POST/PATCH, error handling)
+      2. Load-CoreRecords.ps1 — Loads accounts → contacts → matter → projects → budgets → invoices → work assignments
+      3. Load-DocumentRecords.ps1 — Loads sprk_document records with AI enrichment fields
+      4. Upload-SpeFiles.ps1 — Uploads files to SPE via BFF API, patches document records with graphitemid/graphdriveid
+      5. Load-ActivityRecords.ps1 — Loads events → communications → KPIs → billing events → spend snapshots
+      6. Load-AllScenario1.ps1 — Master orchestrator running all scripts in order
+      7. Remove-Scenario1Data.ps1 — Deletes all scenario data in reverse dependency order
+
+      Key patterns to follow:
+      - Auth: az account get-access-token --resource https://spaarkedev1.crm.dynamics.com
+      - Headers: Authorization Bearer, OData-MaxVersion 4.0, OData-Version 4.0
+      - Upsert: PATCH with alternate key for idempotency
+      - Lookups: @odata.bind format for entity references
+      - Throttling: 500ms delay between API calls
+      - Error handling: $ErrorActionPreference = 'Stop', try/catch per record, continue on failure
+      - Progress reporting: Write-Host with counts
+    </context>
+    <constraints>
+      - All scripts go in scripts/phase0/
+      - Target: https://spaarkedev1.crm.dynamics.com/api/data/v9.2/
+      - BFF API: https://spe-api-dev-67e2xz.azurewebsites.net
+      - Scripts read JSON from output/scenario-1-meridian/
+      - Idempotent: re-running must not create duplicates
+      - Must handle lookup resolution (find GUID of referenced record, use in @odata.bind)
+      - Remove script must prompt for confirmation before deleting
+      - All scripts must validate az login before proceeding
+    </constraints>
+  </prompt>
+
+  <steps>
+    <step>Create scripts/phase0/ directory</step>
+    <step>Create Invoke-DataverseApi.ps1 with token auth, request methods, error handling</step>
+    <step>Create Load-CoreRecords.ps1 — loads foundation + business entities in dependency order</step>
+    <step>Create Load-DocumentRecords.ps1 — loads document records with AI fields</step>
+    <step>Create Upload-SpeFiles.ps1 — uploads files via BFF API, patches document records</step>
+    <step>Create Load-ActivityRecords.ps1 — loads events, communications, KPIs, billing, spend</step>
+    <step>Create Load-AllScenario1.ps1 — master orchestrator</step>
+    <step>Create Remove-Scenario1Data.ps1 — reverse-order deletion with confirmation</step>
+    <step>Test script syntax (PowerShell -NoExecute parse check)</step>
+  </steps>
+
+  <outputs>
+    <file>scripts/phase0/Invoke-DataverseApi.ps1</file>
+    <file>scripts/phase0/Load-CoreRecords.ps1</file>
+    <file>scripts/phase0/Load-DocumentRecords.ps1</file>
+    <file>scripts/phase0/Upload-SpeFiles.ps1</file>
+    <file>scripts/phase0/Load-ActivityRecords.ps1</file>
+    <file>scripts/phase0/Load-AllScenario1.ps1</file>
+    <file>scripts/phase0/Remove-Scenario1Data.ps1</file>
+  </outputs>
+
+  <acceptance-criteria>
+    <criterion>All 7 scripts created with consistent patterns</criterion>
+    <criterion>Invoke-DataverseApi.ps1 handles auth, GET, POST, PATCH, DELETE</criterion>
+    <criterion>Load scripts read JSON files and upsert records in correct dependency order</criterion>
+    <criterion>Upload script handles BFF API authentication and file upload</criterion>
+    <criterion>Remove script prompts for confirmation and deletes in reverse order</criterion>
+    <criterion>All scripts pass PowerShell syntax validation</criterion>
+  </acceptance-criteria>
+</task>

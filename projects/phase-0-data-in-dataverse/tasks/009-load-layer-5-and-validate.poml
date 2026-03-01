@@ -1,0 +1,56 @@
+<task id="009" project="phase-0-data-in-dataverse">
+  <metadata>
+    <title>Load Activity Records (Layer 5) and Validate All Data</title>
+    <phase>3 - Loading &amp; Validation</phase>
+    <tags>loading, validation, dataverse, webapi, deployment</tags>
+    <estimate>1-2 hours</estimate>
+    <dependencies>008</dependencies>
+    <parallel-group>none</parallel-group>
+  </metadata>
+
+  <prompt>
+    <goal>Load all activity/transactional records and run full validation across all layers</goal>
+    <context>
+      Final loading phase — events, communications, KPIs, billing events, and spend snapshots all reference records from Layers 1-4 (loaded in Tasks 007-008).
+
+      After loading, run validation checks:
+      1. Record count per entity matches expected
+      2. Lookup relationships resolve (spot-check 10% of records)
+      3. AI enrichment fields are non-null on document records
+      4. SPE files are linked correctly (hasfile=true records have graphitemid)
+      5. Event dates are within matter timeline
+      6. Billing event amounts sum to invoice totals
+    </context>
+    <constraints>
+      - Run Load-ActivityRecords.ps1 from Task 006
+      - Activity records use polymorphic regarding lookups — must resolve to correct GUIDs
+      - Validation queries use OData $filter and $count
+      - Document all validation results
+    </constraints>
+  </prompt>
+
+  <steps>
+    <step>Run Load-ActivityRecords.ps1 — load events, communications, KPIs, billing events, spend snapshots</step>
+    <step>Verify record counts: query each entity with $count</step>
+    <step>Spot-check lookup integrity: query 5-10 records per entity, verify regarding lookups resolve</step>
+    <step>Verify AI enrichment: query documents where sprk_filesummary is null (should be 0)</step>
+    <step>Verify file linkage: query documents where sprk_hasfile=true, check graphitemid is non-null</step>
+    <step>Verify billing totals: sum billing events per invoice, compare to invoice amounts</step>
+    <step>Manual spot-check: open 2-3 matter forms in Dataverse UI, verify subgrids render correctly</step>
+    <step>Write validation report</step>
+  </steps>
+
+  <outputs>
+    <file>notes/validation-report.md (full validation results)</file>
+  </outputs>
+
+  <acceptance-criteria>
+    <criterion>50 events loaded with correct regarding lookups</criterion>
+    <criterion>35 communications loaded with contact references</criterion>
+    <criterion>6 KPI assessments loaded with grades and narratives</criterion>
+    <criterion>60-70 billing events loaded and summing to invoice totals</criterion>
+    <criterion>6 spend snapshots loaded with actual vs. forecast</criterion>
+    <criterion>All validation checks pass (or failures documented with remediation plan)</criterion>
+    <criterion>Manual UI spot-check confirms data renders correctly on forms</criterion>
+  </acceptance-criteria>
+</task>
