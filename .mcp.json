@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "dataverse-demo": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@microsoft/dataverse",
+        "mcp",
+        "https://spaarke-demo.crm.dynamics.com"
+      ],
+      "env": {}
+    }
+  }
+}
