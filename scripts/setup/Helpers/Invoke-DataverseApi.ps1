@@ -34,6 +34,41 @@ $script:MaxRetries       = 3            # retry count on 429
 # Cache for resolved scenario IDs -> GUIDs  (entity -> scenarioid -> guid)
 $script:LookupCache = @{}
 
+# Standard entities do NOT have sprk_scenarioid — use natural keys instead
+$script:StandardEntityConfig = @{
+    'accounts' = @{ LookupField = 'name';           ScenarioMap = @{} }
+    'contacts' = @{ LookupField = 'emailaddress1';  ScenarioMap = @{} }
+}
+
+# ---------------------------------------------------------------------------
+# Register-StandardEntityMapping
+#   Registers the mapping from sprk_scenarioid → natural key value for
+#   standard entities (account, contact) that lack sprk_scenarioid.
+#   Called automatically when loading JSON files that contain these entities.
+# ---------------------------------------------------------------------------
+function Register-StandardEntityMapping {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory)] [string] $EntitySet,
+        [Parameter(Mandatory)] [string] $ScenarioId,
+        [Parameter(Mandatory)] [string] $NaturalKeyValue
+    )
+    if ($script:StandardEntityConfig.ContainsKey($EntitySet)) {
+        $script:StandardEntityConfig[$EntitySet].ScenarioMap[$ScenarioId] = $NaturalKeyValue
+    }
+}
+
+# ---------------------------------------------------------------------------
+# Test-IsStandardEntity
+#   Returns $true if the entity set is a standard Dataverse entity that
+#   does not have the sprk_scenarioid custom field.
+# ---------------------------------------------------------------------------
+function Test-IsStandardEntity {
+    [CmdletBinding()]
+    param([Parameter(Mandatory)] [string] $EntitySet)
+    return $script:StandardEntityConfig.ContainsKey($EntitySet)
+}
+
 # ---------------------------------------------------------------------------
 # Set-DataverseUrl
 #   Override the Dataverse URL at runtime (called by orchestrator).
@@ -270,7 +305,25 @@ function Find-RecordByScenarioId {
     }
 
     $pkColumn = Get-PrimaryKeyColumn -EntitySet $EntitySet
-    $filter = "sprk_scenarioid eq '$ScenarioId'"
+
+    # Standard entities: look up by natural key instead of sprk_scenarioid
+    if (Test-IsStandardEntity -EntitySet $EntitySet) {
+        $config = $script:StandardEntityConfig[$EntitySet]
+        $lookupField = $config.LookupField
+        $naturalValue = $config.ScenarioMap[$ScenarioId]
+
+        if (-not $naturalValue) {
+            Write-Host "    [WARN] No natural key mapping for $EntitySet/$ScenarioId" -ForegroundColor Yellow
+            return $null
+        }
+
+        $escapedValue = $naturalValue -replace "'", "''"
+        $filter = "$lookupField eq '$escapedValue'"
+    }
+    else {
+        $filter = "sprk_scenarioid eq '$ScenarioId'"
+    }
+
     $uri = "$($script:WebApiUrl)/$($EntitySet)?`$filter=$filter&`$select=$pkColumn"
 
     try {
@@ -398,6 +451,22 @@ function Upsert-Record {
         return $false
     }
 
+    # For standard entities: register the natural key mapping and strip sprk_scenarioid from payload
+    $isStandard = Test-IsStandardEntity -EntitySet $EntitySet
+    if ($isStandard) {
+        $config = $script:StandardEntityConfig[$EntitySet]
+        $lookupField = $config.LookupField
+        $naturalValue = $Record[$lookupField]
+
+        if ($naturalValue) {
+            Register-StandardEntityMapping -EntitySet $EntitySet -ScenarioId $scenarioId -NaturalKeyValue $naturalValue
+        }
+
+        # Remove sprk_scenarioid from the payload — standard entities don't have this field
+        $Record = $Record.Clone()
+        $Record.Remove('sprk_scenarioid')
+    }
+
     try {
         $existingId = Find-RecordByScenarioId -EntitySet $EntitySet -ScenarioId $scenarioId -Headers $Headers
 
@@ -455,6 +524,21 @@ function Load-EntityFromFile {
     Write-Host "  Source: $FilePath" -ForegroundColor DarkGray
     Write-Host "  Records: $($data.records.Count)" -ForegroundColor DarkGray
 
+    # Pre-register natural key mappings for standard entities
+    # so that cross-entity lookup resolution works (e.g., contact → account)
+    if (Test-IsStandardEntity -EntitySet $EntitySet) {
+        $config = $script:StandardEntityConfig[$EntitySet]
+        $lookupField = $config.LookupField
+        foreach ($record in $data.records) {
+            $sid = $record.sprk_scenarioid
+            $nk = $record.$lookupField
+            if ($sid -and $nk) {
+                Register-StandardEntityMapping -EntitySet $EntitySet -ScenarioId $sid -NaturalKeyValue $nk
+            }
+        }
+        Write-Host "  Registered $($config.ScenarioMap.Count) natural key mappings for $EntitySet" -ForegroundColor DarkGray
+    }
+
     $loaded = 0
     $failed = 0
 
@@ -488,10 +572,45 @@ function Delete-RecordsByScenarioPrefix {
     param(
         [Parameter(Mandatory)] [string]    $EntitySet,
         [Parameter(Mandatory)] [string]    $Prefix,
-        [Parameter(Mandatory)] [hashtable] $Headers
+        [Parameter(Mandatory)] [hashtable] $Headers,
+        [string[]] $NameValues
     )
 
     $pkColumn = Get-PrimaryKeyColumn -EntitySet $EntitySet
+
+    # Standard entities: delete by known name values (can't filter by sprk_scenarioid)
+    if (Test-IsStandardEntity -EntitySet $EntitySet) {
+        $config = $script:StandardEntityConfig[$EntitySet]
+        $lookupField = $config.LookupField
+
+        if (-not $NameValues -or $NameValues.Count -eq 0) {
+            Write-Host "  [SKIP] $EntitySet — no name values provided for standard entity deletion" -ForegroundColor Yellow
+            return 0
+        }
+
+        Write-Host "  Querying $EntitySet for $($NameValues.Count) known records..." -ForegroundColor DarkGray
+        $deleted = 0
+        foreach ($nameVal in $NameValues) {
+            $escapedVal = $nameVal -replace "'", "''"
+            $filter = "$lookupField eq '$escapedVal'"
+            $uri = "$($script:WebApiUrl)/$($EntitySet)?`$filter=$filter&`$select=$pkColumn"
+            try {
+                $result = Invoke-DataverseRequest -Method GET -Uri $uri -Headers $Headers
+                if ($result.value -and $result.value.Count -gt 0) {
+                    $guid = $result.value[0].$pkColumn
+                    $deleteUri = "$($script:WebApiUrl)/$EntitySet($guid)"
+                    Invoke-DataverseRequest -Method DELETE -Uri $deleteUri -Headers $Headers | Out-Null
+                    Write-Host "    Deleted $nameVal ($guid)" -ForegroundColor DarkGray
+                    $deleted++
+                }
+            }
+            catch {
+                Write-Host "    [ERROR] Failed to delete $nameVal : $_" -ForegroundColor Red
+            }
+        }
+        return $deleted
+    }
+
     $filter = "startswith(sprk_scenarioid,'$Prefix')"
     $uri = "$($script:WebApiUrl)/$($EntitySet)?`$filter=$filter&`$select=$pkColumn,sprk_scenarioid"
 

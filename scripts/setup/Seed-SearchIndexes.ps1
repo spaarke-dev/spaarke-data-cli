@@ -38,6 +38,7 @@ param(
     [int]    $ChunkSize          = 2048,
     [int]    $ChunkOverlap       = 200,
     [string] $SpaarkeRepoPath    = "C:\code_files\spaarke",
+    [string] $TenantId           = "a221a95e-6abc-4434-aecc-e48338a1b2f2",
     [switch] $DryRun
 )
 
@@ -126,6 +127,7 @@ function Split-TextIntoChunks {
             $chunks += $chunk
         }
 
+        if ($end -ge $textLength) { break }
         $pos = [Math]::Max($pos + 1, $end - $Overlap)
     }
 
@@ -239,7 +241,14 @@ foreach ($entry in $manifest.files) {
     $chunkCount = $chunks.Count
 
     $fileType = [System.IO.Path]::GetExtension($docRecord.sprk_filename).TrimStart('.').ToLower()
-    $keywords = if ($docRecord.sprk_keywords) { $docRecord.sprk_keywords -split ',\s*' } else { @() }
+    $rawKeywords = $docRecord.sprk_filekeywords
+    if (-not $rawKeywords) { $rawKeywords = $docRecord.sprk_keywords }
+    $keywords = @()
+    if ($rawKeywords) {
+        $keywords = @($rawKeywords -split ',\s*' | Where-Object { $_ -and $_.Trim().Length -gt 0 } | ForEach-Object { $_.Trim() })
+    }
+    if ($keywords.Count -eq 0 -and $fileType) { $keywords = @($fileType) }
+    $keywords = [string[]]$keywords
 
     Write-Host "  $docId — $chunkCount chunks ($($content.Length) chars)" -ForegroundColor DarkGray
 
@@ -252,6 +261,7 @@ foreach ($entry in $manifest.files) {
         $chunkDoc = @{
             '@search.action' = 'upload'
             'id'                = $chunkId
+            'tenantId'          = $TenantId
             'documentId'        = $documentGuid
             'speFileId'         = $speFileId
             'fileName'          = $docRecord.sprk_filename
@@ -307,36 +317,50 @@ elseif ($DryRun) {
 
 # ===========================================================================
 # PART B: Dataverse Records → Records Index
+# Uses the local Sync-RecordsIndex.ps1 (config-driven, environment-agnostic).
+# Falls back to the spaarke repo's Sync-RecordsToIndex.ps1 if local is absent.
 # ===========================================================================
 Write-Host ""
 Write-Host "--- Part B: Records Index ($RecordsIndexName) ---" -ForegroundColor Cyan
 
-# Delegate to existing Sync-RecordsToIndex.ps1 if available
-$syncScript = Join-Path $SpaarkeRepoPath "scripts" "ai-search" "Sync-RecordsToIndex.ps1"
+$localSyncScript    = Join-Path $PSScriptRoot "Sync-RecordsIndex.ps1"
+$externalSyncScript = Join-Path $SpaarkeRepoPath "scripts" "ai-search" "Sync-RecordsToIndex.ps1"
 
-if (Test-Path $syncScript) {
-    Write-Host "  Delegating to Sync-RecordsToIndex.ps1..." -ForegroundColor DarkGray
+if (Test-Path $localSyncScript) {
+    Write-Host "  Delegating to local Sync-RecordsIndex.ps1..." -ForegroundColor DarkGray
 
     if ($DryRun) {
         Write-Host "  (DRY RUN — would sync matters, projects, invoices, accounts)" -ForegroundColor Yellow
     }
     else {
         try {
-            & $syncScript `
-                -EnvironmentUrl $script:DataverseBaseUrl `
-                -RecordTypes @("matter", "project", "invoice", "account") `
-                -SearchServiceName ($script:SearchServiceUrl -replace 'https://|\.search\.windows\.net', '') `
-                -SearchIndexName $RecordsIndexName
+            & $localSyncScript -IndexName $RecordsIndexName
             Write-Host "  [OK] Records index seeded" -ForegroundColor Green
         }
         catch {
-            Write-Host "  [WARN] Sync-RecordsToIndex.ps1 failed: $_" -ForegroundColor Yellow
+            Write-Host "  [WARN] Local Sync-RecordsIndex.ps1 failed: $_" -ForegroundColor Yellow
             Write-Host "         Records index may need manual seeding." -ForegroundColor Yellow
         }
     }
 }
+elseif (Test-Path $externalSyncScript) {
+    Write-Host "  [WARN] Local Sync-RecordsIndex.ps1 not found; trying external (dev-only) script" -ForegroundColor Yellow
+    if (-not $DryRun) {
+        try {
+            & $externalSyncScript `
+                -EnvironmentUrl $script:DataverseBaseUrl `
+                -RecordTypes @("matter", "project", "invoice", "account") `
+                -SearchServiceName ($script:SearchServiceUrl -replace 'https://|\.search\.windows\.net', '') `
+                -SearchIndexName $RecordsIndexName
+            Write-Host "  [OK] Records index seeded (via external script)" -ForegroundColor Green
+        }
+        catch {
+            Write-Host "  [WARN] External script failed: $_" -ForegroundColor Yellow
+        }
+    }
+}
 else {
-    Write-Host "  [WARN] Sync-RecordsToIndex.ps1 not found at: $syncScript" -ForegroundColor Yellow
+    Write-Host "  [WARN] No records-index sync script found" -ForegroundColor Yellow
     Write-Host "         Skipping records index seeding." -ForegroundColor Yellow
 }
 

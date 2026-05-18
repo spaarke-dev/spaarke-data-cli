@@ -1,0 +1,1033 @@
+{
+  "sprk_matter": {
+    "fields": {
+      "sprk_externalaccount": "Lookup",
+      "sprk_assignedattorney2": "Lookup",
+      "sprk_budgetutilizationpercent": "Decimal",
+      "sprk_workspaceflag": "Boolean",
+      "sprk_chartdefinition": "Lookup",
+      "sprk_securitybu": "Lookup",
+      "sprk_assignedattorney1": "Lookup",
+      "sprk_assignedtoexternal": "Lookup",
+      "sprk_issecure": "Boolean",
+      "sprk_budgetcompliancegrade_current": "Decimal",
+      "sprk_searchprofile": "Memo",
+      "sprk_remainingbudget": "Money",
+      "sprk_scenarioid": "String",
+      "sprk_guidelinecompliancegrade_average": "Decimal",
+      "sprk_guidelinecompliancegrade_current": "Decimal",
+      "sprk_matterid": "Uniqueidentifier",
+      "sprk_practicearea": "Lookup",
+      "sprk_outcomecompliancegrade_current": "Decimal",
+      "sprk_outcomecompliancegrade_average": "Decimal",
+      "sprk_mattername": "String",
+      "sprk_activesignalcount": "Integer",
+      "sprk_matternumber": "String",
+      "sprk_monthovermonthvelocity": "Decimal",
+      "sprk_assignedlawfirm2": "Lookup",
+      "sprk_mattertype": "Lookup",
+      "sprk_regardingrecordtype": "Lookup",
+      "sprk_monthlyspendcurrent": "Money",
+      "sprk_tasksummary": "Memo",
+      "sprk_matterdescription": "Memo",
+      "sprk_assignedparalegal1": "Lookup",
+      "sprk_invoicecount": "Integer",
+      "sprk_containerid": "String",
+      "sprk_totalbudget": "Money",
+      "sprk_assignedtointernal": "Lookup",
+      "sprk_assignedparalegal2": "Lookup",
+      "sprk_budgetcompliancegrade_average": "Decimal",
+      "sprk_performancesummary": "Memo",
+      "sprk_assignedlawfirm1": "Lookup",
+      "sprk_averageinvoiceamount": "Money",
+      "sprk_monthlyspendtimeline": "Memo",
+      "statuscode": "Status",
+      "sprk_financialsummary": "Memo",
+      "sprk_totalspendtodate": "Money"
+    },
+    "lookups": {
+      "sprk_assignedtoexternal": {
+        "nav": "sprk_AssignedToExternal",
+        "target": "contact"
+      },
+      "sprk_assignedparalegal2": {
+        "nav": "sprk_AssignedParalegal2",
+        "target": "contact"
+      },
+      "sprk_assignedattorney1": {
+        "nav": "sprk_AssignedAttorney1",
+        "target": "contact"
+      },
+      "sprk_assignedtointernal": {
+        "nav": "sprk_AssignedToInternal",
+        "target": "contact"
+      },
+      "sprk_chartdefinition": {
+        "nav": "sprk_ChartDefinition",
+        "target": "sprk_chartdefinition"
+      },
+      "sprk_mattertype": {
+        "nav": "sprk_MatterType",
+        "target": "sprk_mattertype_ref"
+      },
+      "sprk_assignedlawfirm2": {
+        "nav": "sprk_AssignedLawFirm2",
+        "target": "sprk_organization"
+      },
+      "sprk_securitybu": {
+        "nav": "sprk_SecurityBU",
+        "target": "businessunit"
+      },
+      "sprk_assignedattorney2": {
+        "nav": "sprk_AssignedAttorney2",
+        "target": "contact"
+      },
+      "sprk_assignedlawfirm1": {
+        "nav": "sprk_AssignedLawFirm1",
+        "target": "sprk_organization"
+      },
+      "sprk_assignedparalegal1": {
+        "nav": "sprk_AssignedParalegal1",
+        "target": "contact"
+      },
+      "sprk_practicearea": {
+        "nav": "sprk_PracticeArea",
+        "target": "sprk_practicearea_ref"
+      },
+      "sprk_regardingrecordtype": {
+        "nav": "sprk_RegardingRecordType",
+        "target": "sprk_recordtype_ref"
+      },
+      "sprk_externalaccount": {
+        "nav": "sprk_ExternalAccount",
+        "target": "account"
+      }
+    }
+  },
+  "sprk_budget": {
+    "fields": {
+      "sprk_budgetcategory": "Picklist",
+      "sprk_matter": "Lookup",
+      "sprk_currency": "String",
+      "sprk_budgetstatus": "Picklist",
+      "sprk_containerid": "String",
+      "sprk_budgetenddate": "DateTime",
+      "statuscode": "Status",
+      "sprk_budgetnumber": "String",
+      "sprk_scenarioid": "String",
+      "sprk_budgetperiod": "Picklist",
+      "sprk_totalbudget": "Money",
+      "sprk_project": "Lookup",
+      "sprk_budgetstartdate": "DateTime",
+      "sprk_budgetid": "Uniqueidentifier",
+      "sprk_searchprofile": "Memo",
+      "sprk_name": "String",
+      "sprk_budgetyear": "String"
+    },
+    "lookups": {
+      "sprk_project": {
+        "nav": "sprk_project",
+        "target": "sprk_project"
+      },
+      "sprk_matter": {
+        "nav": "sprk_Matter",
+        "target": "sprk_matter"
+      }
+    }
+  },
+  "sprk_kpiassessment": {
+    "fields": {
+      "sprk_project": "Lookup",
+      "sprk_kpigradescore": "Picklist",
+      "statuscode": "Status",
+      "sprk_scenarioid": "String",
+      "sprk_kpiassessmentid": "Uniqueidentifier",
+      "sprk_kpiname": "String",
+      "sprk_matter": "Lookup",
+      "sprk_assessmentcriteria": "Memo",
+      "sprk_performancearea": "Picklist",
+      "sprk_assessmentnotes": "Memo"
+    },
+    "lookups": {
+      "sprk_project": {
+        "nav": "sprk_Project",
+        "target": "sprk_project"
+      },
+      "sprk_matter": {
+        "nav": "sprk_Matter",
+        "target": "sprk_matter"
+      }
+    }
+  },
+  "sprk_billingevent": {
+    "fields": {
+      "sprk_matter": "Lookup",
+      "sprk_currency": "String",
+      "sprk_billingeventid": "Uniqueidentifier",
+      "sprk_containerid": "String",
+      "sprk_correlationid": "String",
+      "sprk_quantity": "Decimal",
+      "sprk_invoice": "Lookup",
+      "sprk_timekeeperrole": "Picklist",
+      "sprk_visibilitystate": "Picklist",
+      "sprk_linesequence": "Integer",
+      "sprk_rate": "Money",
+      "sprk_description": "Memo",
+      "sprk_timekeeper": "String",
+      "sprk_scenarioid": "String",
+      "statuscode": "Status",
+      "sprk_vendororg": "Lookup",
+      "sprk_project": "Lookup",
+      "sprk_amount": "Money",
+      "sprk_roleclass": "String",
+      "sprk_costtype": "Picklist",
+      "sprk_name": "String",
+      "sprk_eventdate": "DateTime"
+    },
+    "lookups": {
+      "sprk_invoice": {
+        "nav": "sprk_Invoice",
+        "target": "sprk_invoice"
+      },
+      "sprk_project": {
+        "nav": "sprk_project",
+        "target": "sprk_project"
+      },
+      "sprk_matter": {
+        "nav": "sprk_matter",
+        "target": "sprk_matter"
+      },
+      "sprk_vendororg": {
+        "nav": "sprk_vendororg",
+        "target": "sprk_organization"
+      }
+    }
+  },
+  "sprk_invoice": {
+    "fields": {
+      "sprk_workspaceflag": "Boolean",
+      "sprk_assignedto": "Lookup",
+      "sprk_currency": "String",
+      "sprk_securitybu": "Lookup",
+      "statuscode": "Status",
+      "sprk_scenarioid": "String",
+      "sprk_issecure": "Boolean",
+      "sprk_confidence": "Decimal",
+      "sprk_invoicestatus": "Picklist",
+      "sprk_searchprofile": "Memo",
+      "sprk_name": "String",
+      "sprk_vendororg": "Lookup",
+      "sprk_matter": "Lookup",
+      "sprk_project": "Lookup",
+      "sprk_correlationid": "String",
+      "sprk_regardingrecordtype": "Lookup",
+      "sprk_assignedattorney": "Lookup",
+      "sprk_assignedparalegal": "Lookup",
+      "sprk_aisummary": "Memo",
+      "sprk_invoiceid": "Uniqueidentifier",
+      "sprk_invoicenumber": "String",
+      "sprk_containerid": "String",
+      "sprk_description": "Memo",
+      "sprk_totalamount": "Money",
+      "sprk_extractedjson": "Memo",
+      "sprk_invoicedate": "DateTime",
+      "sprk_document": "Lookup",
+      "sprk_visibilitystate": "Picklist",
+      "sprk_extractionstatus": "Picklist"
+    },
+    "lookups": {
+      "sprk_vendororg": {
+        "nav": "sprk_vendororg",
+        "target": "sprk_organization"
+      },
+      "sprk_assignedattorney": {
+        "nav": "sprk_AssignedAttorney",
+        "target": "contact"
+      },
+      "sprk_assignedparalegal": {
+        "nav": "sprk_AssignedParalegal",
+        "target": "contact"
+      },
+      "sprk_assignedto": {
+        "nav": "sprk_AssignedTo",
+        "target": "contact"
+      },
+      "sprk_securitybu": {
+        "nav": "sprk_SecurityBU",
+        "target": "businessunit"
+      },
+      "sprk_project": {
+        "nav": "sprk_project",
+        "target": "sprk_project"
+      },
+      "sprk_matter": {
+        "nav": "sprk_Matter",
+        "target": "sprk_matter"
+      },
+      "sprk_document": {
+        "nav": "sprk_document",
+        "target": "sprk_document"
+      },
+      "sprk_regardingrecordtype": {
+        "nav": "sprk_regardingrecordtype",
+        "target": "sprk_recordtype_ref"
+      }
+    }
+  },
+  "sprk_spendsnapshot": {
+    "fields": {
+      "sprk_matter": "Lookup",
+      "sprk_project": "Lookup",
+      "sprk_spendsnapshotid": "Uniqueidentifier",
+      "sprk_allocatedamount": "Money",
+      "sprk_periodvalue": "String",
+      "sprk_correlationid": "String",
+      "sprk_budgetvariance": "Money",
+      "sprk_budgetvariancepct": "Decimal",
+      "sprk_priorperiodamount": "Money",
+      "sprk_priorperiodkey": "String",
+      "statuscode": "Status",
+      "sprk_invoicedamount": "Money",
+      "sprk_scenarioid": "String",
+      "sprk_snapshotdate": "DateTime",
+      "sprk_bucketkey": "String",
+      "sprk_generatedat": "DateTime",
+      "sprk_visibilityfilter": "String",
+      "sprk_periodkey": "String",
+      "sprk_velocitypct": "Decimal",
+      "sprk_budgetamount": "Money",
+      "sprk_periodtype": "Picklist",
+      "sprk_name": "String",
+      "sprk_monthovermonthvelocity": "Decimal"
+    },
+    "lookups": {
+      "sprk_project": {
+        "nav": "sprk_project",
+        "target": "sprk_project"
+      },
+      "sprk_matter": {
+        "nav": "sprk_matter",
+        "target": "sprk_matter"
+      }
+    }
+  },
+  "sprk_budgetbucket": {
+    "fields": {
+      "sprk_budget": "Lookup",
+      "statuscode": "Status",
+      "sprk_periodend": "DateTime",
+      "sprk_bucketkey": "String",
+      "sprk_budgetcategory": "Picklist",
+      "sprk_amount": "Money",
+      "sprk_name": "String",
+      "sprk_budgetbucketid": "Uniqueidentifier",
+      "sprk_scenarioid": "String",
+      "sprk_periodstart": "DateTime"
+    },
+    "lookups": {
+      "sprk_budget": {
+        "nav": "sprk_budget",
+        "target": "sprk_budget"
+      }
+    }
+  },
+  "sprk_communication": {
+    "fields": {
+      "statuscode": "Status",
+      "sprk_regardingrecordid": "String",
+      "sprk_regardinganalysis": "Lookup",
+      "sprk_regardingbudget": "Lookup",
+      "sprk_internetmessageid": "String",
+      "sprk_attachmentcount": "Integer",
+      "sprk_direction": "Picklist",
+      "sprk_scenarioid": "String",
+      "sprk_associationstatus": "Picklist",
+      "sprk_receiveddate": "DateTime",
+      "sprk_searchprofile": "Memo",
+      "sprk_associationcount": "Integer",
+      "sprk_name": "String",
+      "sprk_communicationid": "Uniqueidentifier",
+      "sprk_sentby": "Lookup",
+      "sprk_regardingorganization": "Lookup",
+      "sprk_correlationid": "String",
+      "sprk_communicationtype": "Picklist",
+      "sprk_regardingrecordtype": "Lookup",
+      "sprk_hasattachments": "Boolean",
+      "sprk_sentat": "DateTime",
+      "sprk_cc": "String",
+      "sprk_regardingrecordname": "String",
+      "sprk_errormessage": "Memo",
+      "sprk_subject": "String",
+      "sprk_bcc": "String",
+      "sprk_regardingproject": "Lookup",
+      "sprk_regardingperson": "Lookup",
+      "sprk_containerid": "String",
+      "sprk_regardinginvoice": "Lookup",
+      "sprk_retrycount": "Integer",
+      "sprk_body": "Memo",
+      "sprk_bodyformat": "Picklist",
+      "sprk_regardingmatter": "Lookup",
+      "sprk_to": "String",
+      "sprk_from": "String",
+      "sprk_regardingrecordurl": "String",
+      "sprk_graphmessageid": "String",
+      "sprk_regardingworkassignment": "Lookup"
+    },
+    "lookups": {
+      "sprk_regardingorganization": {
+        "nav": "sprk_RegardingOrganization",
+        "target": "sprk_organization"
+      },
+      "sprk_regardinganalysis": {
+        "nav": "sprk_RegardingAnalysis",
+        "target": "sprk_analysis"
+      },
+      "sprk_regardingbudget": {
+        "nav": "sprk_RegardingBudget",
+        "target": "sprk_budget"
+      },
+      "sprk_sentby": {
+        "nav": "sprk_SentBy",
+        "target": "systemuser"
+      },
+      "sprk_regardingmatter": {
+        "nav": "sprk_RegardingMatter",
+        "target": "sprk_matter"
+      },
+      "sprk_regardingperson": {
+        "nav": "sprk_RegardingPerson",
+        "target": "contact"
+      },
+      "sprk_regardinginvoice": {
+        "nav": "sprk_RegardingInvoice",
+        "target": "sprk_invoice"
+      },
+      "sprk_regardingworkassignment": {
+        "nav": "sprk_RegardingWorkAssignment",
+        "target": "sprk_workassignment"
+      },
+      "sprk_regardingrecordtype": {
+        "nav": "sprk_RegardingRecordType",
+        "target": "sprk_recordtype_ref"
+      },
+      "sprk_regardingproject": {
+        "nav": "sprk_RegardingProject",
+        "target": "sprk_project"
+      }
+    }
+  },
+  "account": {
+    "fields": {
+      "websiteurl": "String",
+      "sprk_containerid": "String",
+      "name": "String",
+      "address1_line1": "String",
+      "numberofemployees": "Integer",
+      "description": "Memo",
+      "address1_postalcode": "String",
+      "address1_stateorprovince": "String",
+      "sprk_scenarioid": "String",
+      "address1_city": "String",
+      "revenue": "Money",
+      "statuscode": "Status",
+      "address1_country": "String",
+      "telephone1": "String",
+      "industrycode": "Picklist",
+      "emailaddress1": "String"
+    },
+    "lookups": {}
+  },
+  "sprk_event": {
+    "fields": {
+      "sprk_finalduedate": "DateTime",
+      "sprk_regardinganalysis": "Lookup",
+      "sprk_todostatus": "Picklist",
+      "sprk_emailsubject": "String",
+      "sprk_regardingrecordtypelogicalname": "String",
+      "sprk_emailfrom": "String",
+      "sprk_relatedevent": "Lookup",
+      "sprk_regardingrecordid": "String",
+      "sprk_todoflag": "Boolean",
+      "sprk_reassigneddate": "DateTime",
+      "sprk_remindat": "DateTime",
+      "sprk_eventnumber": "String",
+      "sprk_tododuedate": "DateTime",
+      "sprk_reassignedby": "Lookup",
+      "sprk_effortreason": "String",
+      "sprk_eventhistory": "Memo",
+      "sprk_completedby": "Lookup",
+      "sprk_reminderoffsetvalue": "Integer",
+      "sprk_relatedeventtype": "Picklist",
+      "sprk_todocolumn": "Picklist",
+      "sprk_plannedduration": "Integer",
+      "sprk_regardingworkassignment": "Lookup",
+      "sprk_eventid": "Uniqueidentifier",
+      "sprk_eventname": "String",
+      "sprk_regardingrecordurl": "String",
+      "sprk_regardingemail": "Lookup",
+      "sprk_eventtypecode": "String",
+      "sprk_eventset": "Lookup",
+      "sprk_todoassigned": "Lookup",
+      "sprk_completeddate": "DateTime",
+      "sprk_todographtaskid": "String",
+      "sprk_emailto": "String",
+      "sprk_effort": "Picklist",
+      "sprk_actualstart": "DateTime",
+      "sprk_basedate": "DateTime",
+      "sprk_eventstatus": "Picklist",
+      "sprk_relatedeventoffsettype": "Picklist",
+      "sprk_assignedfirm": "Lookup",
+      "sprk_regardinginvoice": "Lookup",
+      "sprk_emaildate": "String",
+      "sprk_eventtype_ref": "Lookup",
+      "sprk_relatedeventtypecode": "String",
+      "sprk_priorityreason": "String",
+      "sprk_regardingrecordtype": "Lookup",
+      "sprk_assignedparalegal": "Lookup",
+      "sprk_containerid": "String",
+      "sprk_regardingrecordname": "String",
+      "sprk_regardingmatter": "Lookup",
+      "sprk_assignedto": "Lookup",
+      "sprk_description": "Memo",
+      "sprk_meetingdate": "DateTime",
+      "sprk_meetingtype": "Picklist",
+      "sprk_approvedby": "Lookup",
+      "statuscode": "Status",
+      "sprk_actualduration": "Integer",
+      "sprk_regardingcontact": "Lookup",
+      "sprk_communicationtype": "Picklist",
+      "sprk_isurgent": "Boolean",
+      "sprk_priority": "Picklist",
+      "sprk_priorityscore": "Integer",
+      "sprk_plannedstart": "DateTime",
+      "sprk_todoscore": "Decimal",
+      "sprk_plannedend": "DateTime",
+      "sprk_approveddate": "DateTime",
+      "sprk_regardingproject": "Lookup",
+      "sprk_regardingbudget": "Lookup",
+      "sprk_assignedattorney": "Lookup",
+      "sprk_estimatedminutes": "Integer",
+      "sprk_searchprofile": "Memo",
+      "sprk_meetinglink": "String",
+      "sprk_effortscore": "Integer",
+      "sprk_source": "Picklist",
+      "sprk_regardingorganziation": "Lookup",
+      "sprk_actualend": "DateTime",
+      "sprk_todopinned": "Boolean",
+      "sprk_scenarioid": "String",
+      "sprk_rescheduleddate": "DateTime",
+      "sprk_rescheduledby": "Lookup",
+      "sprk_duedate": "DateTime",
+      "sprk_regardingaccount": "Lookup",
+      "sprk_todosource": "Picklist"
+    },
+    "lookups": {
+      "sprk_regardingemail": {
+        "nav": "sprk_RegardingEmail",
+        "target": "email"
+      },
+      "sprk_assignedparalegal": {
+        "nav": "sprk_AssignedParalegal",
+        "target": "contact"
+      },
+      "sprk_regardingworkassignment": {
+        "nav": "sprk_RegardingWorkAssignment",
+        "target": "sprk_workassignment"
+      },
+      "sprk_assignedattorney": {
+        "nav": "sprk_AssignedAttorney",
+        "target": "contact"
+      },
+      "sprk_regardingbudget": {
+        "nav": "sprk_RegardingBudget",
+        "target": "sprk_budget"
+      },
+      "sprk_approvedby": {
+        "nav": "sprk_ApprovedBy",
+        "target": "contact"
+      },
+      "sprk_relatedevent": {
+        "nav": "sprk_RelatedEvent",
+        "target": "sprk_event"
+      },
+      "sprk_regardingorganziation": {
+        "nav": "sprk_RegardingOrganziation",
+        "target": "sprk_organization"
+      },
+      "sprk_regardingaccount": {
+        "nav": "sprk_RegardingAccount",
+        "target": "account"
+      },
+      "sprk_regardingrecordtype": {
+        "nav": "sprk_RegardingRecordType",
+        "target": "sprk_recordtype_ref"
+      },
+      "sprk_rescheduledby": {
+        "nav": "sprk_RescheduledBy",
+        "target": "contact"
+      },
+      "sprk_regardingcontact": {
+        "nav": "sprk_RegardingContact",
+        "target": "contact"
+      },
+      "sprk_eventset": {
+        "nav": "sprk_EventSet",
+        "target": "sprk_eventset"
+      },
+      "sprk_assignedfirm": {
+        "nav": "sprk_AssignedFirm",
+        "target": "sprk_organization"
+      },
+      "sprk_reassignedby": {
+        "nav": "sprk_ReassignedBy",
+        "target": "contact"
+      },
+      "sprk_completedby": {
+        "nav": "sprk_CompletedBy",
+        "target": "contact"
+      },
+      "sprk_regardingmatter": {
+        "nav": "sprk_RegardingMatter",
+        "target": "sprk_matter"
+      },
+      "sprk_regardinganalysis": {
+        "nav": "sprk_RegardingAnalysis",
+        "target": "sprk_analysis"
+      },
+      "sprk_regardinginvoice": {
+        "nav": "sprk_RegardingInvoice",
+        "target": "sprk_invoice"
+      },
+      "sprk_eventtype_ref": {
+        "nav": "sprk_EventType_Ref",
+        "target": "sprk_eventtype_ref"
+      },
+      "sprk_regardingproject": {
+        "nav": "sprk_RegardingProject",
+        "target": "sprk_project"
+      },
+      "sprk_todoassigned": {
+        "nav": "sprk_ToDoAssigned",
+        "target": "contact"
+      },
+      "sprk_assignedto": {
+        "nav": "sprk_AssignedTo",
+        "target": "contact"
+      }
+    }
+  },
+  "sprk_document": {
+    "fields": {
+      "sprk_graphdriveid": "String",
+      "sprk_relatedmatter": "Lookup",
+      "sprk_invoicehintsjson": "Memo",
+      "sprk_documentdescription": "Memo",
+      "sprk_parentgraphitemid": "String",
+      "sprk_driveitemid": "String",
+      "sprk_invoicetotalhint": "Money",
+      "sprk_classification": "Picklist",
+      "sprk_emailsubject": "String",
+      "sprk_emailfrom": "String",
+      "sprk_extractdates": "Memo",
+      "sprk_filesummary": "Memo",
+      "sprk_filesize": "Integer",
+      "statuscode": "Status",
+      "sprk_filekeywords": "Memo",
+      "sprk_invoicereviewedby": "Lookup",
+      "sprk_emailparentid": "String",
+      "sprk_parentfilename": "String",
+      "sprk_emailmessageid": "String",
+      "sprk_invoicereviewedon": "DateTime",
+      "sprk_mattersuggestionjson": "Memo",
+      "sprk_documentid": "Uniqueidentifier",
+      "sprk_sourcetype": "Picklist",
+      "sprk_project": "Lookup",
+      "sprk_searchindexed": "Boolean",
+      "sprk_checkedoutby": "Lookup",
+      "sprk_checkedinby": "Lookup",
+      "sprk_emailtrackingtoken": "String",
+      "sprk_mattersuggestedref": "String",
+      "sprk_invoice": "Lookup",
+      "sprk_lastmodifieddatetime": "DateTime",
+      "sprk_visualizationcontrol": "String",
+      "sprk_etag": "String",
+      "sprk_documenttype": "Picklist",
+      "sprk_classificationsource": "String",
+      "sprk_graphitemid": "String",
+      "sprk_emailto": "String",
+      "sprk_filepath": "String",
+      "sprk_searchindexedon": "DateTime",
+      "sprk_containername": "Lookup",
+      "sprk_emaildirection": "Picklist",
+      "sprk_hasfile": "Boolean",
+      "sprk_relatedproject": "Lookup",
+      "sprk_extractorganization": "Memo",
+      "sprk_checkedindate": "DateTime",
+      "sprk_invoicevendornamehint": "String",
+      "sprk_filesummarydate": "DateTime",
+      "sprk_filetldr": "Memo",
+      "sprk_communication": "Lookup",
+      "sprk_relationshiptype": "Picklist",
+      "sprk_fileuploadmetadata": "Memo",
+      "sprk_invoicereviewnotes": "Memo",
+      "sprk_containerid": "String",
+      "sprk_documentstatus": "Picklist",
+      "sprk_classificationconfidence": "Decimal",
+      "sprk_filetype": "String",
+      "sprk_classificationdate": "DateTime",
+      "sprk_mimetype": "String",
+      "sprk_emaildate": "DateTime",
+      "sprk_workspaceflag": "Boolean",
+      "sprk_regardingrecordid": "String",
+      "sprk_parentdocument": "Lookup",
+      "sprk_workassignment": "Lookup",
+      "sprk_extractreference": "Memo",
+      "sprk_matter": "Lookup",
+      "sprk_relatedvendororg": "Lookup",
+      "sprk_emailconversationindex": "String",
+      "sprk_invoicereviewstatus": "Picklist",
+      "sprk_filename": "String",
+      "sprk_createddatetime": "DateTime",
+      "sprk_filesummarystatus": "Picklist",
+      "sprk_emailcc": "String",
+      "sprk_invoicecurrencyhint": "String",
+      "sprk_currentversionid": "Lookup",
+      "sprk_searchprofile": "Memo",
+      "sprk_extractpeople": "Memo",
+      "sprk_documentname": "String",
+      "sprk_invoicenumberhint": "String",
+      "sprk_checkedoutdate": "DateTime",
+      "sprk_searchindexname": "String",
+      "sprk_extractdocumenttype": "String",
+      "sprk_scenarioid": "String",
+      "sprk_email": "Lookup",
+      "sprk_parentfolderid": "String",
+      "sprk_invoicedatehint": "DateTime",
+      "sprk_attachments": "Memo",
+      "sprk_extractfees": "Memo",
+      "sprk_versiondescription": "String",
+      "sprk_isemailarchive": "Boolean",
+      "sprk_emailbody": "Memo",
+      "sprk_fileentities": "Memo"
+    },
+    "lookups": {
+      "sprk_relatedmatter": {
+        "nav": "sprk_relatedmatter",
+        "target": "sprk_matter"
+      },
+      "sprk_matter": {
+        "nav": "sprk_Matter",
+        "target": "sprk_matter"
+      },
+      "sprk_checkedinby": {
+        "nav": "sprk_CheckedInBy",
+        "target": "systemuser"
+      },
+      "sprk_relatedproject": {
+        "nav": "sprk_relatedproject",
+        "target": "sprk_project"
+      },
+      "sprk_invoice": {
+        "nav": "sprk_Invoice",
+        "target": "sprk_invoice"
+      },
+      "sprk_relatedvendororg": {
+        "nav": "sprk_relatedvendororg",
+        "target": "sprk_organization"
+      },
+      "sprk_parentdocument": {
+        "nav": "sprk_ParentDocument",
+        "target": "sprk_document"
+      },
+      "sprk_checkedoutby": {
+        "nav": "sprk_CheckedOutBy",
+        "target": "systemuser"
+      },
+      "sprk_communication": {
+        "nav": "sprk_Communication",
+        "target": "sprk_communication"
+      },
+      "sprk_workassignment": {
+        "nav": "sprk_WorkAssignment",
+        "target": "sprk_workassignment"
+      },
+      "sprk_email": {
+        "nav": "sprk_Email",
+        "target": "email"
+      },
+      "sprk_project": {
+        "nav": "sprk_Project",
+        "target": "sprk_project"
+      },
+      "sprk_currentversionid": {
+        "nav": "sprk_CurrentVersionId",
+        "target": "sprk_fileversion"
+      },
+      "sprk_invoicereviewedby": {
+        "nav": "sprk_invoicereviewedby",
+        "target": "systemuser"
+      },
+      "sprk_containername": {
+        "nav": "sprk_ContainerName",
+        "target": "sprk_container"
+      }
+    }
+  },
+  "contact": {
+    "fields": {
+      "websiteurl": "String",
+      "lastname": "String",
+      "sprk_containerid": "String",
+      "address1_line1": "String",
+      "sprk_invoice": "Lookup",
+      "sprk_organization": "Lookup",
+      "company": "String",
+      "description": "Memo",
+      "address1_postalcode": "String",
+      "address1_stateorprovince": "String",
+      "statuscode": "Status",
+      "address1_city": "String",
+      "sprk_scenarioid": "String",
+      "mobilephone": "String",
+      "address1_country": "String",
+      "sprk_systemuser": "Lookup",
+      "telephone1": "String",
+      "firstname": "String",
+      "emailaddress1": "String",
+      "jobtitle": "String"
+    },
+    "lookups": {
+      "sprk_organization": {
+        "nav": "sprk_Organization",
+        "target": "sprk_organization"
+      },
+      "sprk_systemuser": {
+        "nav": "sprk_SystemUser",
+        "target": "systemuser"
+      },
+      "parentcustomerid": {
+        "nav": "parentcustomerid_account",
+        "target": "account"
+      },
+      "sprk_invoice": {
+        "nav": "sprk_Invoice",
+        "target": "sprk_invoice"
+      }
+    }
+  },
+  "sprk_project": {
+    "fields": {
+      "sprk_externalaccount": "Lookup",
+      "sprk_projectdescription": "Memo",
+      "sprk_assignedattorney2": "Lookup",
+      "sprk_budgetutilizationpercent": "Decimal",
+      "sprk_workspaceflag": "Boolean",
+      "sprk_monthovermonthvelocity": "Decimal",
+      "sprk_securitybu": "Lookup",
+      "sprk_remainingbudget": "Money",
+      "sprk_assignedattorney1": "Lookup",
+      "sprk_scenarioid": "String",
+      "sprk_assignedtoexternal": "Lookup",
+      "sprk_issecure": "Boolean",
+      "sprk_budgetcompliancegrade_current": "Decimal",
+      "sprk_searchprofile": "Memo",
+      "sprk_projectname": "String",
+      "sprk_projectid": "Uniqueidentifier",
+      "sprk_monthlyspendtimeline": "Memo",
+      "sprk_outcomecompliancegrade_current": "Decimal",
+      "sprk_outcomecompliancegrade_average": "Decimal",
+      "sprk_practicearea": "Lookup",
+      "sprk_activesignalcount": "Integer",
+      "sprk_totalbudget": "Money",
+      "sprk_assignedlawfirm2": "Lookup",
+      "sprk_guidelinecompliancegrade_current": "Decimal",
+      "sprk_monthlyspendcurrent": "Money",
+      "sprk_gudelinecompliancegrade_average": "Decimal",
+      "sprk_assignedparalegal1": "Lookup",
+      "sprk_projecttype_ref": "Lookup",
+      "sprk_invoicecount": "Integer",
+      "sprk_containerid": "String",
+      "sprk_tasksummary": "Memo",
+      "sprk_assignedtointernal": "Lookup",
+      "sprk_assignedparalegal2": "Lookup",
+      "sprk_budgetcompliancegrade_average": "Decimal",
+      "sprk_performancesummary": "Memo",
+      "sprk_assignedlawfirm1": "Lookup",
+      "sprk_averageinvoiceamount": "Money",
+      "sprk_projectnumber": "String",
+      "statuscode": "Status",
+      "sprk_financialsummary": "Memo",
+      "sprk_mattertype": "Lookup",
+      "sprk_totalspendtodate": "Money"
+    },
+    "lookups": {
+      "sprk_assignedtoexternal": {
+        "nav": "sprk_AssignedToExternal",
+        "target": "contact"
+      },
+      "sprk_assignedparalegal2": {
+        "nav": "sprk_AssignedParalegal2",
+        "target": "contact"
+      },
+      "sprk_assignedattorney1": {
+        "nav": "sprk_AssignedAttorney1",
+        "target": "contact"
+      },
+      "sprk_assignedtointernal": {
+        "nav": "sprk_AssignedToInternal",
+        "target": "contact"
+      },
+      "sprk_projecttype_ref": {
+        "nav": "sprk_ProjectType_Ref",
+        "target": "sprk_projecttype_ref"
+      },
+      "sprk_mattertype": {
+        "nav": "sprk_MatterType",
+        "target": "sprk_mattertype_ref"
+      },
+      "sprk_assignedlawfirm2": {
+        "nav": "sprk_AssignedLawFirm2",
+        "target": "sprk_organization"
+      },
+      "sprk_securitybu": {
+        "nav": "sprk_SecurityBU",
+        "target": "businessunit"
+      },
+      "sprk_assignedattorney2": {
+        "nav": "sprk_AssignedAttorney2",
+        "target": "contact"
+      },
+      "sprk_assignedlawfirm1": {
+        "nav": "sprk_AssignedLawFirm1",
+        "target": "sprk_organization"
+      },
+      "sprk_assignedparalegal1": {
+        "nav": "sprk_AssignedParalegal1",
+        "target": "contact"
+      },
+      "sprk_practicearea": {
+        "nav": "sprk_PracticeArea",
+        "target": "sprk_practicearea_ref"
+      },
+      "sprk_externalaccount": {
+        "nav": "sprk_ExternalAccount",
+        "target": "account"
+      }
+    }
+  },
+  "sprk_workassignment": {
+    "fields": {
+      "sprk_regardingrecordid": "String",
+      "sprk_assignedattorney2": "Lookup",
+      "sprk_workassignmentid": "Uniqueidentifier",
+      "sprk_assignedto": "Lookup",
+      "sprk_assignedlawfirmattorney1": "Lookup",
+      "statuscode": "Status",
+      "sprk_securitybu": "Lookup",
+      "sprk_assignedattorney1": "Lookup",
+      "sprk_scenarioid": "String",
+      "sprk_regardingevent": "Lookup",
+      "sprk_issecure": "Boolean",
+      "sprk_searchprofile": "Memo",
+      "sprk_name": "String",
+      "sprk_responseduedate": "DateTime",
+      "sprk_assignedtoexternal": "Lookup",
+      "sprk_practicearea": "Lookup",
+      "sprk_priority": "Picklist",
+      "sprk_workassignmentnumber": "String",
+      "sprk_regardingrecordname": "String",
+      "sprk_assignedlawfirm2": "Lookup",
+      "sprk_mattertype": "Lookup",
+      "sprk_regardingrecordtype": "Lookup",
+      "sprk_regardingproject": "Lookup",
+      "sprk_assignedparalegal1": "Lookup",
+      "sprk_containerid": "String",
+      "sprk_description": "Memo",
+      "sprk_assignedtointernal": "Lookup",
+      "sprk_regardinginvoice": "Lookup",
+      "sprk_assignedparalegal2": "Lookup",
+      "sprk_regardingmatter": "Lookup",
+      "sprk_assignedlawfirm1": "Lookup",
+      "sprk_regardingcommunication": "Lookup",
+      "sprk_regardingrecordurl": "String"
+    },
+    "lookups": {
+      "sprk_assignedtoexternal": {
+        "nav": "sprk_AssignedToExternal",
+        "target": "contact"
+      },
+      "sprk_regardinginvoice": {
+        "nav": "sprk_RegardingInvoice",
+        "target": "sprk_invoice"
+      },
+      "sprk_regardingproject": {
+        "nav": "sprk_RegardingProject",
+        "target": "sprk_project"
+      },
+      "sprk_assignedparalegal2": {
+        "nav": "sprk_AssignedParalegal2",
+        "target": "contact"
+      },
+      "sprk_assignedtointernal": {
+        "nav": "sprk_AssignedToInternal",
+        "target": "contact"
+      },
+      "sprk_mattertype": {
+        "nav": "sprk_MatterType",
+        "target": "sprk_mattertype_ref"
+      },
+      "sprk_regardingevent": {
+        "nav": "sprk_RegardingEvent",
+        "target": "sprk_event"
+      },
+      "sprk_regardingrecordtype": {
+        "nav": "sprk_RegardingRecordType",
+        "target": "sprk_recordtype_ref"
+      },
+      "sprk_assignedlawfirm2": {
+        "nav": "sprk_AssignedLawFirm2",
+        "target": "sprk_organization"
+      },
+      "sprk_assignedattorney1": {
+        "nav": "sprk_AssignedAttorney1",
+        "target": "contact"
+      },
+      "sprk_assignedto": {
+        "nav": "sprk_AssignedTo",
+        "target": "contact"
+      },
+      "sprk_securitybu": {
+        "nav": "sprk_SecurityBU",
+        "target": "businessunit"
+      },
+      "sprk_assignedattorney2": {
+        "nav": "sprk_AssignedAttorney2",
+        "target": "contact"
+      },
+      "sprk_assignedlawfirm1": {
+        "nav": "sprk_AssignedLawFirm1",
+        "target": "sprk_organization"
+      },
+      "sprk_regardingmatter": {
+        "nav": "sprk_RegardingMatter",
+        "target": "sprk_matter"
+      },
+      "sprk_assignedlawfirmattorney1": {
+        "nav": "sprk_AssignedLawFirmAttorney1",
+        "target": "contact"
+      },
+      "sprk_practicearea": {
+        "nav": "sprk_PracticeArea",
+        "target": "sprk_practicearea_ref"
+      },
+      "sprk_assignedparalegal1": {
+        "nav": "sprk_AssignedParalegal1",
+        "target": "contact"
+      },
+      "sprk_regardingcommunication": {
+        "nav": "sprk_RegardingCommunication",
+        "target": "sprk_communication"
+      }
+    }
+  }
+}

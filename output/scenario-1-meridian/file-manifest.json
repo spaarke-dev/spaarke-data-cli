@@ -1,7 +1,7 @@
 {
   "scenario": "meridian-v-pinnacle",
   "generated": "2026-03-01",
-  "total_files": 28,
+  "total_files": 65,
   "files": [
     {
       "doc_id": "mvp-doc-001",
@@ -198,6 +198,265 @@
       "type": "memo",
       "format": "markdown",
       "description": "Witness list for trial with expected testimony summaries"
+    },
+    {
+      "doc_id": "mvp-doc-003",
+      "path": "contracts/mvp-doc-003_sow-001-initial-manufacturing-2023.md",
+      "type": "sow",
+      "format": "markdown",
+      "description": "First SOW under the MSA, executed April 10, 2023, for Pinnacle to manufacture 50,000 precision-molded housings using Meridian's thermal compression process. Includes technical specifications, quality benchmarks, and a $1.2M fixed-price deliverable schedule over 6 months."
+    },
+    {
+      "doc_id": "mvp-doc-004",
+      "path": "contracts/mvp-doc-004_sow-002-expanded-production-2023.md",
+      "type": "sow",
+      "format": "markdown",
+      "description": "Second SOW dated August 22, 2023, expanding Pinnacle's manufacturing engagement to include 120,000 additional units across three product SKUs. Incorporates modified thermal compression parameters developed during SOW-001. Total value $3.6M over 12 months."
+    },
+    {
+      "doc_id": "mvp-doc-005",
+      "path": "contracts/mvp-doc-005_sow-003-specialty-alloy-2024.md",
+      "type": "sow",
+      "format": "markdown",
+      "description": "Third SOW executed January 8, 2024, for Pinnacle to manufacture specialty alloy components using an advanced variant of the thermal compression process. This SOW is significant because it required Pinnacle to develop tooling modifications that Meridian alleges were later incorporated into Pinnacle's AutoForge product line."
+    },
+    {
+      "doc_id": "mvp-doc-006",
+      "path": "contracts/mvp-doc-006_msa-amendment-001-2024.md",
+      "type": "amendment",
+      "format": "markdown",
+      "description": "First amendment to the MSA dated June 15, 2024, extending the agreement term by two years through January 2028 and strengthening IP ownership provisions in Section 8 to explicitly cover derivative processes and tooling innovations. Meridian argues this amendment was triggered by early concerns about Pinnacle's independent use of licensed technology."
+    },
+    {
+      "doc_id": "mvp-doc-007",
+      "path": "contracts/mvp-doc-007_tla-amendment-002-scope-2024.md",
+      "type": "amendment",
+      "format": "markdown",
+      "description": "Second amendment to the Technology License Agreement dated September 3, 2024, clarifying that the license scope under Section 3.2 does not extend to independently developed products or product lines not specified in an active SOW. Pinnacle contends this amendment was not properly executed and lacks consideration."
+    },
+    {
+      "doc_id": "mvp-doc-008",
+      "path": "contracts/mvp-doc-008_msa-termination-notice-2025.md",
+      "type": "terminationnotice",
+      "format": "markdown",
+      "description": "Formal termination notice dated May 30, 2025, from Meridian Corp to Pinnacle Industries terminating the MSA and all active SOWs for cause under Section 14.2 (Material Breach). Cites Pinnacle's unauthorized use of licensed technology in the AutoForge product line as the basis for termination, with an effective date of July 1, 2025."
+    },
+    {
+      "doc_id": "mvp-doc-010",
+      "path": "contracts/mvp-doc-010_nda-expert-patel-2025.md",
+      "type": "nda",
+      "format": "markdown",
+      "description": "Non-disclosure agreement dated November 5, 2025 between Meridian Corp, Baker & Associates LLP, and Dr. Robert Patel governing his access to confidential manufacturing specifications and trade secrets in connection with his expert witness engagement. Restricts use of materials to the litigation only."
+    },
+    {
+      "doc_id": "mvp-doc-011",
+      "path": "contracts/mvp-doc-011_nda-expert-nakamura-2025.md",
+      "type": "nda",
+      "format": "markdown",
+      "description": "Non-disclosure agreement dated November 12, 2025 between Pinnacle Industries, Chen Law Group, and Dr. Emily Nakamura governing her access to Pinnacle's proprietary AutoForge technical documentation and manufacturing data for her patent validity and non-infringement analysis."
+    },
+    {
+      "doc_id": "mvp-doc-013",
+      "path": "pleadings/mvp-doc-013_answer-counterclaim-pinnacle-2025.md",
+      "type": "answer",
+      "format": "markdown",
+      "description": "Pinnacle Industries' Answer filed September 29, 2025, denying infringement and asserting affirmative defenses including patent invalidity (anticipation by prior art), non-infringement, and inequitable conduct. Counterclaim seeks declaratory judgment of non-infringement and patent invalidity, plus damages for breach of implied covenant of good faith arising from the MSA termination."
+    },
+    {
+      "doc_id": "mvp-doc-014",
+      "path": "pleadings/mvp-doc-014_motion-compel-discovery-meridian-2025.md",
+      "type": "motion",
+      "format": "markdown",
+      "description": "Meridian's motion filed November 20, 2025, to compel Pinnacle to produce AutoForge engineering schematics, source code for the manufacturing control system, and internal communications regarding the development of the AutoForge product line. Argues Pinnacle's privilege log is overbroad and improperly withholds 847 documents under work product and attorney-client privilege."
+    },
+    {
+      "doc_id": "mvp-doc-017",
+      "path": "pleadings/mvp-doc-017_claim-construction-brief-meridian-2026.md",
+      "type": "claimconstructionbrief",
+      "format": "markdown",
+      "description": "Meridian's opening claim construction brief filed February 14, 2026, proposing constructions for 12 disputed claim terms in US Patent 9,876,543. Key disputes center on the terms 'thermal compression molding,' 'precision tolerance,' and 'sequential pressure application,' which define the scope of the patented manufacturing process."
+    },
+    {
+      "doc_id": "mvp-doc-018",
+      "path": "discovery/mvp-doc-018_interrogatories-plaintiff-set1-2025.md",
+      "type": "interrogatories",
+      "format": "markdown",
+      "description": "Meridian's first set of 25 interrogatories served October 1, 2025, seeking detailed information about AutoForge development timeline, engineering personnel involved, prior art references considered by Pinnacle, and revenue generated from AutoForge product sales since launch in Q3 2024."
+    },
+    {
+      "doc_id": "mvp-doc-019",
+      "path": "discovery/mvp-doc-019_interrogatories-defendant-set1-2025.md",
+      "type": "interrogatories",
+      "format": "markdown",
+      "description": "Pinnacle's first set of 25 interrogatories served October 8, 2025, seeking information on Meridian's patent prosecution history, identification of all prior art known to Meridian at the time of filing US Patent 9,876,543, damages computation methodology, and identification of all persons with knowledge of the patented process."
+    },
+    {
+      "doc_id": "mvp-doc-020",
+      "path": "discovery/mvp-doc-020_rfp-plaintiff-set1-2025.md",
+      "type": "requestforproduction",
+      "format": "markdown",
+      "description": "Meridian's first set of 42 document requests served October 1, 2025, targeting AutoForge design documents, engineering notebooks, internal communications about thermal compression techniques, supplier agreements, and financial records related to AutoForge product line revenue and profit margins."
+    },
+    {
+      "doc_id": "mvp-doc-021",
+      "path": "discovery/mvp-doc-021_rfp-defendant-set1-2025.md",
+      "type": "requestforproduction",
+      "format": "markdown",
+      "description": "Pinnacle's first set of 38 document requests served October 8, 2025, seeking Meridian's patent prosecution file history, all prior art references, licensing agreements with third parties for US Patent 9,876,543, internal communications regarding the decision to terminate the MSA, and all documents supporting Meridian's damages calculation."
+    },
+    {
+      "doc_id": "mvp-doc-022",
+      "path": "depositions/mvp-doc-022_deposition-morrison-james-2025.md",
+      "type": "deposition",
+      "format": "markdown",
+      "description": "Transcript of the deposition of James Morrison taken December 3, 2025. Morrison testified about inventing the thermal compression molding process, the technology transfer to Pinnacle under the license agreement, and his observation that AutoForge specifications closely mirror Meridian's patented process parameters. 287 pages, 6 hours of testimony."
+    },
+    {
+      "doc_id": "mvp-doc-023",
+      "path": "depositions/mvp-doc-023_deposition-wright-thomas-2025.md",
+      "type": "deposition",
+      "format": "markdown",
+      "description": "Transcript of the deposition of Thomas Wright taken December 10, 2025. Wright testified about Pinnacle's AutoForge product development timeline, denied any intentional use of Meridian's patented technology, and described AutoForge as an independently developed system based on publicly available manufacturing literature. 312 pages, 7 hours of testimony."
+    },
+    {
+      "doc_id": "mvp-doc-024",
+      "path": "depositions/mvp-doc-024_deposition-patel-robert-2026.md",
+      "type": "deposition",
+      "format": "markdown",
+      "description": "Transcript of the deposition of Dr. Robert Patel taken January 15, 2026. Patel was examined on his expert report methodology, his comparison of the patented thermal compression process to AutoForge specifications, and his qualifications. Testified that AutoForge uses substantially similar pressure curves and temperature profiles to Meridian's patented process. 245 pages."
+    },
+    {
+      "doc_id": "mvp-doc-025",
+      "path": "depositions/mvp-doc-025_deposition-nakamura-emily-2026.md",
+      "type": "deposition",
+      "format": "markdown",
+      "description": "Transcript of the deposition of Dr. Emily Nakamura taken January 22, 2026. Nakamura was examined on her patent validity analysis, her identification of three prior art references she contends anticipate US Patent 9,876,543, and her opinion that AutoForge does not practice the asserted patent claims. 268 pages."
+    },
+    {
+      "doc_id": "mvp-doc-026",
+      "path": "depositions/mvp-doc-026_deposition-foster-amanda-2026.md",
+      "type": "deposition",
+      "format": "markdown",
+      "description": "Transcript of the deposition of Amanda Foster taken February 5, 2026. Foster testified about Pinnacle's internal IP review process, her role in negotiating the TLA amendments, and the document preservation hold she implemented upon receiving the termination notice. Significant objections on privilege grounds regarding communications with outside counsel. 198 pages."
+    },
+    {
+      "doc_id": "mvp-doc-027",
+      "path": "discovery/mvp-doc-027_privilege-log-pinnacle-2025.md",
+      "type": "privilegelog",
+      "format": "markdown",
+      "description": "Pinnacle Industries' privilege log produced November 15, 2025, listing 847 documents withheld from production on grounds of attorney-client privilege and work product protection. Covers communications between Pinnacle executives and both in-house counsel Amanda Foster and outside counsel Chen Law Group from January 2025 to October 2025."
+    },
+    {
+      "doc_id": "mvp-doc-028",
+      "path": "discovery/mvp-doc-028_production-cover-letter-meridian-set1-2025.md",
+      "type": "productioncoverletter",
+      "format": "markdown",
+      "description": "Cover letter dated November 1, 2025 accompanying Meridian Corp's first document production of 12,450 documents (Bates numbered MC-000001 through MC-012450). Identifies custodians James Morrison, Sarah Chen, and four engineering team members. Notes that confidential treatment designations apply per the Stipulated Protective Order."
+    },
+    {
+      "doc_id": "mvp-doc-029",
+      "path": "discovery/mvp-doc-029_production-cover-letter-pinnacle-set1-2025.md",
+      "type": "productioncoverletter",
+      "format": "markdown",
+      "description": "Cover letter dated November 15, 2025 accompanying Pinnacle Industries' first document production of 8,320 documents (Bates numbered PI-000001 through PI-008320). Identifies custodians Thomas Wright, Amanda Foster, and three AutoForge engineering leads. Withholds 847 documents per the accompanying privilege log."
+    },
+    {
+      "doc_id": "mvp-doc-031",
+      "path": "expert-reports/mvp-doc-031_expert-report-patel-damages-2026.md",
+      "type": "expertreportdamages",
+      "format": "markdown",
+      "description": "Dr. Patel's supplemental damages report dated January 10, 2026, calculating Meridian's lost profits and reasonable royalty damages. Estimates total damages between $38.5M and $52.7M based on Pinnacle's AutoForge revenue of $127M since product launch, applying a 15% hypothetical royalty rate and accounting for price erosion in Meridian's competing product lines."
+    },
+    {
+      "doc_id": "mvp-doc-033",
+      "path": "expert-reports/mvp-doc-033_nakamura-rebuttal-patent-opinion-feb2026.md",
+      "type": "expertreportrebuttal",
+      "format": "markdown",
+      "description": "Rebuttal expert report by Dr. Emily Nakamura addressing Dr. Patel's manufacturing process analysis and challenging the infringement conclusions. Dr. Nakamura provides a detailed claim-by-claim comparison of the asserted patent claims against Pinnacle's AutoForge system, arguing that key limitations are not met. The report also addresses prior art references that were not considered in the original analysis."
+    },
+    {
+      "doc_id": "mvp-doc-037",
+      "path": "memos/mvp-doc-037_litigation-hold-notice-sep2025.md",
+      "type": "litigationhold",
+      "format": "markdown",
+      "description": "Litigation hold notice issued to Meridian Corp directing preservation of all documents related to the patented manufacturing processes, the Pinnacle Industries business relationship, and the TechFlex product line. Specifies custodians, data sources, and preservation obligations under Federal Rule of Civil Procedure 37(e)."
+    },
+    {
+      "doc_id": "mvp-doc-038",
+      "path": "memos/mvp-doc-038_budget-review-memo-dec2025.md",
+      "type": "budgetmemo",
+      "format": "markdown",
+      "description": "Quarterly budget review memorandum summarizing Q4 2025 expenditures against the approved litigation budget for Meridian v. Pinnacle. Reports actual spend of $122,830 against a budgeted $115,000, with overruns attributed to expanded document review and early expert retention. Projects total case cost through trial at $450,000-$520,000."
+    },
+    {
+      "doc_id": "mvp-doc-042",
+      "path": "emails/mvp-doc-042_email-chen-torres-budget-approved-nov2025.eml",
+      "type": "email",
+      "format": "eml",
+      "description": "Inbound email from Sarah Chen approving Dr. Patel's expert engagement budget and authorizing Baker & Associates to proceed with retention at the quoted rate."
+    },
+    {
+      "doc_id": "mvp-doc-044",
+      "path": "emails/mvp-doc-044_email-torres-chen-settlement-strategy-jan2026.eml",
+      "type": "email",
+      "format": "eml",
+      "description": "Privileged outbound email from Rachel Torres to Sarah Chen formalizing the settlement strategy with an initial demand of $12M and authority to negotiate to $6M. Notes that opposing counsel has informally indicated openness to discussions."
+    },
+    {
+      "doc_id": "mvp-doc-045",
+      "path": "emails/mvp-doc-045_email-chen-park-expert-timeline-feb2026.eml",
+      "type": "email",
+      "format": "eml",
+      "description": "Inbound email from Sarah Chen to Michael Park asking for clarification on expert report exchange deadlines. Requests a timeline summary for Meridian's CEO and board meeting."
+    },
+    {
+      "doc_id": "mvp-doc-047",
+      "path": "emails/mvp-doc-047_email-kim-torres-production-response-nov2025.eml",
+      "type": "email",
+      "format": "eml",
+      "description": "Inbound email from David Kim responding to Baker's proposed discovery schedule. Agrees to rolling productions starting November 15 but requests an extension to February 28 for completion, citing volume concerns and objecting to Request No. 14 scope."
+    },
+    {
+      "doc_id": "mvp-doc-049",
+      "path": "emails/mvp-doc-049_email-kim-torres-deficiency-response-jan2026.eml",
+      "type": "email",
+      "format": "eml",
+      "description": "Inbound email from David Kim disputing the characterization of Pinnacle's production as deficient. Argues AutoForge documents are withheld pending protective order and internal communications are work product protected."
+    },
+    {
+      "doc_id": "mvp-doc-051",
+      "path": "emails/mvp-doc-051_email-kim-nakamura-depo-scheduling-feb2026.eml",
+      "type": "email",
+      "format": "eml",
+      "description": "Inbound email from David Kim forwarding Dr. Nakamura's deposition availability for March 12 or 14 in Boston, with an option for remote deposition if permitted."
+    },
+    {
+      "doc_id": "mvp-doc-052",
+      "path": "emails/mvp-doc-052_email-patel-park-supplemental-report-jan2026.eml",
+      "type": "email",
+      "format": "eml",
+      "description": "Inbound email from Dr. Patel delivering his supplemental manufacturing analysis report addressing defendant's technical arguments about thermal compression timing. Includes a revised comparison table of AutoForge parameters against patent specifications."
+    },
+    {
+      "doc_id": "mvp-doc-058",
+      "path": "invoices/mvp-doc-058_invoice-nakamura-patent-opinion-NAKAMURA-2026-001.md",
+      "type": "invoice",
+      "format": "markdown",
+      "description": "Scanned PDF of Dr. Emily Nakamura's invoice NAKAMURA-2026-001 for patent validity opinion report totaling $12,800.00. Covers claim-by-claim analysis of Meridian's patent portfolio, prior art assessment, and preparation of the final patent validity and non-infringement opinion report."
+    },
+    {
+      "doc_id": "mvp-doc-063",
+      "path": "memos/mvp-doc-063_case-timeline-meridian-pinnacle-feb2026.md",
+      "type": "casetimeline",
+      "format": "markdown",
+      "description": "Comprehensive case timeline documenting key events in the Meridian Corp v. Pinnacle Industries litigation from the initial patent filings through current proceedings. Includes dates for patent issuance, first notice of infringement, complaint filing, discovery milestones, and upcoming deadlines through trial."
+    },
+    {
+      "doc_id": "mvp-doc-064",
+      "path": "memos/mvp-doc-064_exhibit-list-plaintiff-proposed-feb2026.md",
+      "type": "exhibitlist",
+      "format": "markdown",
+      "description": "Preliminary exhibit list identifying 87 proposed trial exhibits for plaintiff Meridian Corp. Includes patent documents, key communications, manufacturing specifications, expert reports, financial records, and demonstrative exhibits. Each entry notes the exhibit number, description, source, and anticipated evidentiary foundation."
     }
   ]
 }
